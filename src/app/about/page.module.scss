@@ -50,7 +50,22 @@
   display: block;
 }
 
-// heroBg removed
+.heroBg {
+  background: #150033;
+  padding-block: 80px;
+  padding-inline: 40px;
+  margin-inline: 200px;
+  border-radius: 60px;
+  overflow: hidden;
+
+  @include below(xl) { margin-inline: 40px; }
+  @include below(md) {
+    margin-inline: 16px;
+    padding-inline: 20px;
+    border-radius: 24px;
+    padding-block: 60px;
+  }
+}
 
 .heroContentCard {
   background: #150033;

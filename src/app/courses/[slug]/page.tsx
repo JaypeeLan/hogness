@@ -38,7 +38,7 @@ export default async function CoursePage({ params }: Props) {
     <main className={styles.main}>
       {/* ══ HERO ════════════════════════════════════════════ */}
       <section className={styles.heroOuter}>
-        <div className="container">
+        <div className={styles.heroBg}>
           <div className={styles.heroGrid}>
             <div className={`${styles.heroContent} anim`}>
               <div className={styles.heroBadge}>

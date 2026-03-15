@@ -14,21 +14,25 @@ export default function ServicesPage() {
     <main className={styles.main}>
       {/* ══ HERO ════════════════════════════════════════════ */}
       <section className={styles.heroOuter}>
-        <div className="container">
-          <div className={`${styles.heroContent} anim`}>
-            <span className={styles.heroBadge}>
-              <NodeIcon />
-              OUR SERVICES
-            </span>
-            <h1 className={styles.heroH1}>
-              Technology Solutions for Learning and Innovation
-            </h1>
-            <p className={styles.heroText}>
-              At Hogens Technologies Ltd, we provide technology-driven solutions to support individuals, learners, 
-              and educational institutions. Our services combine technology expertise with practical solutions 
-              that improve learning, decision-making, and digital transformation.
-            </p>
+        <div className={styles.heroBg}>
+          <div className={styles.heroContentWrapper}>
+            <div className={`${styles.heroContent} anim`}>
+              <span className={styles.heroBadge}>
+                <NodeIcon />
+                OUR SERVICES
+              </span>
+              <h1 className={styles.heroH1}>
+                Technology Solutions for Learning and Innovation
+              </h1>
+              <p className={styles.heroText}>
+                At Hogens Technologies Ltd, we provide technology-driven solutions to support individuals, learners, 
+                and educational institutions. Our services combine technology expertise with practical solutions 
+                that improve learning, decision-making, and digital transformation.
+              </p>
+            </div>
           </div>
+        </div>
+        <div className={styles.heroImgContainer}>
           <div className={styles.heroImgInner}>
             <Image 
               src="/images/heroes/services-hero.png" 

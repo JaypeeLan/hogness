@@ -15,27 +15,31 @@ export default function HomePage() {
     <>
       {/* ══ HERO — full-width centered text, wide image below ══ */}
       <section className={styles.heroOuter}>
-        <div className="container">
-          <div className={`${styles.heroContent} anim`}>
-            <span className={styles.heroBadge}>
-              <NodeIcon />
-              PRACTICAL TECH TRAINING
-            </span>
-            <h1 className={styles.heroH1}>
-              <span> Build Future-Ready Tech Skills That </span> Open New Opportunities
-            </h1>
-            <p className={styles.heroDesc}>
-              At Hogens Technologies Ltd, we make technology simple, practical, and accessible. Whether you want to explore data, understand AI, or start coding, our hands-on programs help you learn with confidence.
-            </p>
-            <div className={styles.heroActions}>
-              <Button as="link" href="/courses" variant="primary" size="lg">
-                Explore Courses &rarr;
-              </Button>
-              <Button as="link" href="/courses" variant="white" size="lg" style={{ color: '#000', fontWeight: 'bold' }}>
-                Start Learning Today
-              </Button>
+        <div className={styles.heroBg}>
+          <div className={styles.heroContentWrapper}>
+            <div className={`${styles.heroContent} anim`}>
+              <span className={styles.heroBadge}>
+                <NodeIcon />
+                PRACTICAL TECH TRAINING
+              </span>
+              <h1 className={styles.heroH1}>
+                <span> Build Future-Ready Tech Skills That </span> Open New Opportunities
+              </h1>
+              <p className={styles.heroDesc}>
+                At Hogens Technologies Ltd, we make technology simple, practical, and accessible. Whether you want to explore data, understand AI, or start coding, our hands-on programs help you learn with confidence.
+              </p>
+              <div className={styles.heroActions}>
+                <Button as="link" href="/courses" variant="primary" size="lg">
+                  Explore Courses &rarr;
+                </Button>
+                <Button as="link" href="/courses" variant="white" size="lg" style={{ color: '#000', fontWeight: 'bold' }}>
+                  Start Learning Today
+                </Button>
+              </div>
             </div>
           </div>
+        </div>
+        <div className={styles.heroImgContainer}>
           <div className={styles.heroImgInner}>
             <img src="/images/heroes/hero-img.png" alt="Students learning" loading="lazy" className={styles.heroImage} />
           </div>
