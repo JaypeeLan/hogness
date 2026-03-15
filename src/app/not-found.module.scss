@@ -1,0 +1,67 @@
+@use '@/styles/mixins' as *;
+@use '@/styles/tokens' as *;
+
+.notFound {
+  @include flex(column, center, center, $sp-10);
+  min-height: calc(100vh - $header-height - 100px); // subtract header and some padding
+  padding-block: $sp-32;
+  text-align: center;
+  background-color: $color-bg;
+
+  .content {
+    @include container;
+    @include flex(column, center, center, $sp-6);
+    max-width: 600px;
+  }
+
+  .errorCode {
+    font-size: 120px;
+    font-weight: $fw-800;
+    color: $color-primary;
+    line-height: $lh-tight;
+    margin: 0;
+    opacity: 0.1;
+    position: absolute;
+    z-index: 0;
+    user-select: none;
+  }
+
+  .title {
+    font-size: $fs-48;
+    font-weight: $fw-800;
+    color: $purple-900;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+
+    @include below(md) {
+      font-size: $fs-36;
+    }
+  }
+
+  .description {
+    font-size: $fs-18;
+    color: $gray-600;
+    max-width: 480px;
+    margin-inline: auto;
+    line-height: $lh-relaxed;
+    position: relative;
+    z-index: 1;
+  }
+
+  .actions {
+    @include flex(row, center, center, $sp-4);
+    margin-top: $sp-4;
+    position: relative;
+    z-index: 1;
+
+    @include below(sm) {
+      flex-direction: column;
+      width: 100%;
+      
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
