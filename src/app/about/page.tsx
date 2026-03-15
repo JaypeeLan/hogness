@@ -15,27 +15,25 @@ export default function AboutPage() {
     <main className={styles.main}>
       {/* ══ HERO =============================================== */}
       <section className={styles.heroOuter}>
-        <div className={styles.heroBg}>
-          <div className="container">
-            <div className={styles.heroGrid}>
-              <div className={styles.heroImgWrap}>
-                <img src="/images/sections/about-section-img.png" alt="Student learning" loading="lazy" className={styles.heroImage} />
+        <div className="container">
+          <div className={styles.heroGrid}>
+            <div className={styles.heroImgWrap}>
+              <img src="/images/sections/about-section-img.png" alt="Student learning" loading="lazy" className={styles.heroImage} />
+            </div>
+            <div className={`${styles.heroContentCard} anim`}>
+              <div className={styles.heroBadge}>
+                <NodeIcon />
+                About Hogens Technologies Ltd
               </div>
-              <div className={`${styles.heroContentCard} anim`}>
-                <div className={styles.heroBadge}>
-                  <NodeIcon />
-                  About Hogens Technologies Ltd
-                </div>
-                <h1 className={styles.heroH1}>
-                  Empowering individuals and<br />
-                  organizations with practical<br />
-                  technology skills
-                </h1>
-                <p className={styles.heroText}>
-                  Hogens Technologies Ltd is a technology company dedicated to making learning and technology simple, practical, and accessible. Through hands-on training programs, digital education solutions, and technology consulting, we help people understand and use technology with confidence.<br/>
-                  Whether you want to build digital skills, explore data, or understand emerging technologies, our goal is to support your journey toward knowledge and innovation.
-                </p>
-              </div>
+              <h1 className={styles.heroH1}>
+                Empowering individuals and<br />
+                organizations with practical<br />
+                technology skills
+              </h1>
+              <p className={styles.heroText}>
+                Hogens Technologies Ltd is a technology company dedicated to making learning and technology simple, practical, and accessible. Through hands-on training programs, digital education solutions, and technology consulting, we help people understand and use technology with confidence.<br/>
+                Whether you want to build digital skills, explore data, or understand emerging technologies, our goal is to support your journey toward knowledge and innovation.
+              </p>
             </div>
           </div>
         </div>

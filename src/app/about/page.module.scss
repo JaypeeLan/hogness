@@ -8,36 +8,44 @@
 // ══ HERO ════════════════════════════════════════════
 .heroOuter {
   margin-top: $header-height;
-  padding-block: 24px;
+  padding-block: 80px;
   background: $white;
+
+  @include below(md) { padding-block: 48px; }
 }
 
 // HeroBg already handles padding-block: 80px and margins
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1fr 1.25fr; // Match screenshot proportions
-  gap: 32px;
-  align-items: center;
+  grid-template-columns: 0.85fr 1.15fr; // Match design proportions where text card is wider
+  gap: 80px; // Very generous gap for "clear space" as requested
+  align-items: stretch; // Ensure both cards have the same height
+
+  @include below(xl) {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+  }
 
   @include below(lg) {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
     text-align: center;
   }
 }
 
 .heroImgWrap {
-  border-radius: 24px;
+  border-radius: 40px;
   overflow: hidden;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
-  height: 100%; // Fill grid
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+  height: 100%; 
+  aspect-ratio: 680 / 750; // Keep image aspect ratio premium
   
   @include below(lg) {
     max-width: 600px;
     margin-inline: auto;
-    margin-top: 40px;
-    height: 400px;
+    height: auto;
+    aspect-ratio: auto;
   }
 }
 
@@ -48,37 +56,24 @@
   display: block;
 }
 
-.heroBg {
-  background: #150033;
-  padding-block: 80px;
-  margin-inline: 200px;
-  border-radius: 60px;
-  overflow: hidden;
-
-  @include below(xl) { margin-inline: 40px; }
-  @include below(md) {
-    margin-inline: 16px;
-    border-radius: 24px;
-    padding-block: 60px;
-  }
-}
-
-// heroContentWrapper removed
-
 .heroContentCard {
   background: #150033;
-  padding: 64px 48px;
+  padding: 80px 64px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 24px;
-  border-radius: 32px;
-  height: 100%; // Fill grid
+  border-radius: 40px;
+  min-height: 600px; // Ensure consistent presence
   
+  @include below(xl) { padding: 60px 48px; }
   @include below(lg) { 
-    padding: 40px 32px; 
+    padding: 60px 40px; 
     align-items: center;
+    border-radius: 32px;
+    min-height: auto;
   }
-  @include below(sm) { padding: 32px 20px; }
+  @include below(sm) { padding: 48px 24px; }
 }
 
 .heroBadge {
@@ -98,13 +93,15 @@
 }
 
 .heroH1 {
-  font-size: $fs-48;
-  font-weight: $fw-600;
+  font-size: 56px;
+  font-weight: 700;
   color: $white;
-  line-height: 1.2;
+  line-height: $lh-tight;
+  letter-spacing: -0.02em;
 
-  @include below(lg) { font-size: $fs-32; }
-  @include below(sm) { font-size: $fs-24; }
+  @include below(xl) { font-size: 42px; }
+  @include below(lg) { font-size: 36px; }
+  @include below(sm) { font-size: 28px; }
 }
 
 .heroText {
