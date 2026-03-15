@@ -15,24 +15,31 @@
 .heroBg {
   background: #150033;
   padding-block: 80px;
-  padding-inline: 80px; 
   margin-inline: 200px;
   border-radius: 60px;
   overflow: hidden;
 
-  @include below(xl) { margin-inline: 40px; padding-inline: 40px; }
+  @include below(xl) { margin-inline: 40px; }
   @include below(md) {
     margin-inline: 16px;
-    padding-inline: 24px;
     border-radius: 32px;
     padding-block: 60px;
   }
 }
 
+.heroContentWrapper {
+  width: 100%;
+  max-width: 1240px; // Standard width inside the box
+  margin-inline: auto;
+  padding-inline: 60px;
+
+  @include below(md) { padding-inline: 24px; }
+}
+
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px; // Slightly wider gap for premium feel
+  gap: 40px; // Compact gap inside the constrained wrapper
   align-items: center;
 
   @include below(lg) {
