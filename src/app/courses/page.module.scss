@@ -1,0 +1,187 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  background: $purple-900;
+  padding-top: calc(#{$header-height} + 72px);
+  padding-bottom: 80px;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: $fs-12;
+  font-weight: $fw-500;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: $r-full;
+  padding: 5px 14px;
+  letter-spacing: 0.04em;
+}
+
+.heroH1 {
+  font-size: $fs-42;
+  font-weight: $fw-700;
+  color: $white;
+  line-height: $lh-snug;
+
+  @include below(lg) { font-size: $fs-32; }
+  @include below(sm) { font-size: $fs-28; }
+}
+
+.heroDesc {
+  font-size: $fs-15;
+  color: rgba(255,255,255,0.70);
+  line-height: $lh-relaxed;
+}
+
+// ══ COURSES GRID ════════════════════════════════════
+.courses {
+  padding-block: 96px;
+  background: $gray-50;
+
+  @include below(md) { padding-block: 64px; }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: $fs-11;
+  font-weight: $fw-600;
+  color: $purple-700;
+  background: $purple-tag;
+  border: 1px solid rgba(108,43,217,0.15);
+  border-radius: $r-full;
+  padding: 4px 14px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: $fs-32;
+  font-weight: $fw-700;
+  color: $gray-800;
+
+  @include below(sm) { font-size: $fs-24; }
+}
+
+.desc {
+  font-size: $fs-15;
+  color: $gray-600;
+  line-height: $lh-relaxed;
+  max-width: 520px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include below(lg) { grid-template-columns: repeat(2, 1fr); }
+  @include below(sm) { grid-template-columns: 1fr; }
+}
+
+.card {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: $r-16;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  transition: box-shadow $t-base, transform $t-base, border-color $t-base;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+    transform: translateY(-3px);
+    border-color: rgba(108,43,217,0.2);
+  }
+}
+
+.cardFeatured {
+  background: $purple-700;
+  border-color: transparent;
+
+  .cardTitle   { color: $white; }
+  .cardDesc    { color: rgba(255,255,255,0.75); }
+  .cardDuration,
+  .cardLevel   { color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.12); border-color: transparent; }
+  .cardCta     { color: rgba(255,255,255,0.85); border-top-color: rgba(255,255,255,0.15); }
+
+  &:hover { background: $purple-800; transform: translateY(-3px); }
+}
+
+.cardIcon {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.cardBody {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cardTitle {
+  font-size: $fs-16;
+  font-weight: $fw-600;
+  color: $gray-800;
+  line-height: $lh-snug;
+}
+
+.cardDesc {
+  font-size: $fs-13;
+  color: $gray-600;
+  line-height: $lh-relaxed;
+  @include clamp(3);
+}
+
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cardDuration,
+.cardLevel {
+  font-size: $fs-11;
+  font-weight: $fw-500;
+  color: $gray-600;
+  background: $gray-50;
+  border: 1px solid $gray-200;
+  border-radius: $r-full;
+  padding: 3px 10px;
+}
+
+.cardCta {
+  font-size: $fs-13;
+  font-weight: $fw-600;
+  color: $purple-700;
+  padding-top: 12px;
+  border-top: 1px solid $gray-200;
+  transition: letter-spacing $t-fast;
+
+  .card:hover & { letter-spacing: 0.02em; }
+}

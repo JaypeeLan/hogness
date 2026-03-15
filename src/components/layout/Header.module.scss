@@ -1,0 +1,280 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-nav;
+  height: $header-height;
+  transition:
+    background-color 250ms ease,
+    box-shadow 250ms ease;
+
+  // Transparent on hero (default)
+  background: $white;
+}
+
+.scrolled {
+  background: $white;
+  box-shadow: 0 1px 0 $gray-200, 0 2px 8px rgba(0,0,0,0.06);
+
+  .navLink        { color: $gray-600; }
+  .navLinkActive  { color: $purple-700; }
+  .logoBrand      { color: $gray-800; }
+  .logoSub        { color: $gray-600; }
+  .hamburger span { background: $gray-800; }
+}
+
+.inner {
+  @include container;
+  @include flex-between;
+  height: 100%;
+  gap: $sp-6;
+}
+
+// ── Logo ─────────────────────────────────────────
+.logo {
+
+  transition: opacity $t-fast;
+
+  &:hover { opacity: 0.85; }
+}
+
+
+
+// ── Desktop nav ──────────────────────────────────
+.nav {
+  display: flex;
+  align-items: center;
+  gap: $sp-8;
+  margin: 0 auto; // center in header
+
+  @include below(lg) { display: none; }
+}
+
+.navLink {
+  font-size: 13px;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: none;
+  padding: 4px 0;
+  position: relative;
+  transition: color $t-fast;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $purple-700;
+    border-radius: $r-full;
+    transform: scaleX(0);
+    transition: transform $t-base;
+    transform-origin: left;
+  }
+
+  &:hover {
+    color: $purple-700;
+    &::after { transform: scaleX(1); }
+  }
+}
+
+.navLinkActive {
+  color: $purple-700;
+  &::after { transform: scaleX(1); }
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+
+  // extend hover hit area
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: $white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  border: 1px solid #F3F4F6;
+  min-width: 220px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: dropdownIn 0.2s ease forwards;
+  z-index: 100;
+}
+
+@keyframes dropdownIn {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.dropdownItem {
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #4B5563;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #F4F5FB;
+    color: $purple-700;
+  }
+}
+
+// ── Desktop CTA ──────────────────────────────────
+.cta {
+  flex-shrink: 0;
+  @include below(lg) { display: none; }
+}
+
+// ── Hamburger ────────────────────────────────────
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: $r-8;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: background $t-fast;
+
+  @include below(lg) { display: flex; }
+
+  &:hover { background: rgba(255,255,255,0.1); }
+
+  span {
+    display: block;
+    height: 2px;
+    background: $gray-800;
+    border-radius: $r-full;
+    transition:
+      transform $t-slow,
+      opacity $t-slow,
+      width $t-slow;
+
+    &:nth-child(1) { width: 20px; }
+    &:nth-child(2) { width: 24px; }
+    &:nth-child(3) { width: 16px; }
+  }
+
+  &Open span {
+    &:nth-child(1) { transform: translateY(7px) rotate(45deg); width: 22px; }
+    &:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    &:nth-child(3) { transform: translateY(-7px) rotate(-45deg); width: 22px; }
+  }
+}
+
+// ── Mobile drawer ────────────────────────────────
+.drawer {
+  display: none;
+  position: fixed;
+  top: $header-height;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 320px;
+  background: $purple-900;
+  z-index: $z-overlay;
+  transform: translateX(100%);
+  transition: transform $t-slower;
+
+  @include below(lg) { display: block; }
+
+  &Open {
+    transform: translateX(0);
+  }
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  padding: $sp-8 $sp-6;
+}
+
+.drawerLink {
+  font-size: $fs-18;
+  font-weight: $fw-600;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: $sp-4 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color $t-fast, padding-left $t-base;
+  opacity: 0;
+  animation: slideIn 300ms $t-slow both;
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(16px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  &:hover {
+    color: $white;
+    padding-left: 8px;
+  }
+}
+
+.drawerLinkActive {
+  color: $white;
+}
+
+.drawerCta {
+  margin-top: $sp-8;
+}
+
+.drawerSubNav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  gap: 12px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  border-left: 2px solid rgba(255,255,255,0.1);
+}
+
+.drawerSubLink {
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+  text-decoration: none;
+  padding-block: 4px;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+// ── Overlay ──────────────────────────────────────
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: $z-sticky;
+  backdrop-filter: blur(2px);
+
+  @include below(lg) { display: block; }
+}

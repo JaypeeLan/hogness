@@ -1,0 +1,45 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.banner {
+  background: url('/images/heroes/cta-bg.png') no-repeat center center;
+  background-size: cover;
+  padding-block: 80px;
+  border-radius: 20px;
+  margin-inline: 200px;
+  margin-bottom: 150px;
+  position: relative;
+  overflow: hidden;
+
+  @include below(xl) { margin-inline: 40px; }
+  @include below(md) { padding-block: 64px; margin-inline: 16px; }
+  @include below(sm) { padding-block: 48px; }
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  max-width: 640px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: $fw-700;
+  color: $white;
+  line-height: $lh-tight;
+
+  @include below(sm) { font-size: $fs-24; }
+}
+
+.desc {
+  font-size: $fs-12;
+  color: $white;
+  line-height: $lh-relaxed;
+}
+

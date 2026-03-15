@@ -1,0 +1,450 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.main {
+  background: $white;
+}
+
+// ══ HERO ════════════════════════════════════════════
+.heroOuter {
+  margin-top: $header-height;
+  padding-block: 24px;
+  background: $white;
+}
+
+.heroBg {
+  background: #150033;
+  padding-block: 80px;
+  margin-inline: 200px;
+  border-radius: 40px;
+  overflow: hidden;
+
+  @include below(xl) { margin-inline: 40px; }
+  @include below(md) {
+    margin-inline: 16px;
+    border-radius: 24px;
+    padding-block: 60px;
+  }
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; // Changed to 60/40 ratio
+  gap: 60px;
+  align-items: center;
+
+  @include below(lg) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  @include below(lg) { align-items: center; }
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: $white;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: $r-full;
+  padding: 4px 12px;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 800;
+  color: $white;
+  line-height: $lh-tight;
+
+  @include below(md) { font-size: 32px; }
+}
+
+.heroTagline {
+  font-size: 18px;
+  font-weight: 600;
+  color: $white;
+  opacity: 0.9;
+}
+
+.heroDesc {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.heroBtnGroup {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+
+  @include below(sm) {
+    flex-direction: column;
+    width: 100%;
+
+    :global(.btn) { width: 100%; }
+  }
+}
+
+.whiteBtn {
+  background: $white !important;
+  color: $gray-800 !important;
+  border: none !important;
+  font-weight: 700 !important;
+
+  &:hover {
+    background: #F3F4F6 !important;
+  }
+}
+
+.heroImgWrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  
+  @include below(lg) {
+    max-width: 600px;
+    margin-inline: auto;
+    margin-top: 40px;
+  }
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// ══ OVERVIEW ════════════════════════════════════════
+.overviewSection {
+  padding-block: 120px 80px;
+
+  @include below(md) { padding-block: 80px 40px; }
+}
+
+.overviewGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.sectionTitle {
+  font-size: 28px;
+  font-weight: 800;
+  color: $purple-900;
+  margin-bottom: 24px;
+}
+
+.overviewText {
+  font-size: 15px;
+  color: $gray-600;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.courseMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid $gray-100;
+}
+
+.metaItem {
+  display: flex;
+  gap: 8px;
+}
+
+.metaLabel {
+  font-weight: 700;
+  color: $gray-800;
+  font-size: 14px;
+}
+
+.metaValue {
+  color: $gray-600;
+  font-size: 14px;
+}
+
+.learnTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: $gray-800;
+  margin-bottom: 32px;
+}
+
+.learnGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  @include below(lg) { grid-template-columns: repeat(2, 1fr); }
+  @include below(sm) { grid-template-columns: 1fr; }
+}
+
+.learnCard {
+  padding: 24px;
+  background: $white;
+  border: 1px solid $gray-100;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $purple-tag;
+    box-shadow: $shadow-md;
+    transform: translateY(-2px);
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 600;
+    color: $gray-700;
+    line-height: 1.4;
+  }
+}
+
+.learnIcon {
+  width: 40px;
+  height: 40px;
+  background: $gray-50;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $purple-700;
+}
+
+// ══ MODULES ═════════════════════════════════════════
+.modulesSection {
+  padding-block: 80px;
+  background: $gray-50;
+}
+
+.sectionTitleCentered {
+  font-size: 28px;
+  font-weight: 800;
+  color: $purple-900;
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.modulesList {
+  max-width: 800px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.moduleItem {
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.moduleHeader {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: $gray-50;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+.moduleBody {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease;
+}
+
+.show {
+  max-height: 1000px; // Large enough for content
+}
+
+.moduleBodyInner {
+  padding: 0 24px 24px;
+}
+
+.moduleSummary {
+  font-size: 14px;
+  color: $gray-600;
+  margin-bottom: 20px;
+  line-height: $lh-relaxed;
+}
+
+.moduleTopics {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  @include below(sm) { grid-template-columns: 1fr; }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $gray-800;
+  }
+}
+
+.dot {
+  color: #008EFF;
+  flex-shrink: 0;
+}
+
+// ══ TOOLS & SKILLS ══════════════════════════════════
+.toolsSection {
+  padding-block: 100px;
+}
+
+.toolsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+
+  @include below(lg) {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}
+
+.subTitle {
+  font-size: 20px;
+  font-weight: 800;
+  color: $gray-800;
+  margin-bottom: 24px;
+}
+
+.toolsPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.toolPill {
+  padding: 10px 20px;
+  background: #E8F4FF;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: $gray-800;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 20px 40px;
+
+  @include below(sm) { grid-template-columns: 1fr; }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: $gray-800;
+  }
+}
+
+// ══ CAREERS ═════════════════════════════════════════
+.careersSection {
+  padding-block: 100px;
+  background: $white;
+  text-align: center;
+  color: $gray-800;
+
+  .sectionTitleCentered { color: $gray-800; margin-bottom: 16px; }
+}
+
+.careerSubtitle {
+  font-size: 15px;
+  color: $gray-600;
+  max-width: 700px;
+  margin: 0 auto 64px;
+  line-height: $lh-relaxed;
+}
+
+.careerGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+
+  @include below(lg) { grid-template-columns: repeat(2, 1fr); }
+  @include below(sm) { grid-template-columns: 1fr; }
+}
+
+.careerCard {
+  background: $white;
+  border: 1px solid $gray-100;
+  padding: 32px 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $purple-tag;
+    box-shadow: $shadow-md;
+    transform: translateY(-5px);
+  }
+
+  h4 {
+    font-size: 14px;
+    font-weight: 800;
+    color: $gray-800;
+  }
+}
+
+.careerIconWrap {
+  width: 50px;
+  height: 50px;
+  background: #E8F4FF;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #008EFF;
+
+  svg { width: 22px; height: 22px; }
+}
+
+.careerAction {
+  display: flex;
+  justify-content: center;
+}

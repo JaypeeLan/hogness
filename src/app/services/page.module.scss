@@ -1,0 +1,256 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.main {
+  background: $white;
+}
+
+// ══ HERO ════════════════════════════════════════════
+.heroOuter {
+  margin-top: $header-height;
+  position: relative;
+  background: $white;
+  padding-bottom: 40px;
+}
+
+.heroBg {
+  background: $purple-900;
+  padding-top: 64px;
+  padding-bottom: 280px; 
+  margin-top: 24px;
+  margin-inline: 200px; // Match 200px margin
+  border-radius: 40px 40px 80px 80px;
+  overflow: hidden;
+  text-align: center;
+
+  @include below(xl) { margin-inline: 40px; }
+  @include below(md) {
+    margin-inline: 16px;
+    border-radius: 20px 20px 40px 40px;
+    padding-bottom: 100px;
+  }
+}
+
+.heroContent {
+  max-width: 800px;
+  margin-inline: auto;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: $fs-12;
+  font-weight: $fw-600;
+  color: $white;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: $r-full;
+  padding: 5px 14px;
+  letter-spacing: 0.05em;
+}
+
+.heroH1 {
+  font-size: 42px;
+  font-weight: $fw-800;
+  color: $white;
+  line-height: 1.2;
+
+  @include below(md) { font-size: 32px; }
+}
+
+.heroText {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.7;
+}
+
+.heroImgContainer {
+  position: relative;
+  margin-top: -200px;
+  z-index: 5;
+  padding-inline: 40px;
+}
+
+.heroImgInner {
+  max-width: 1000px;
+  margin-inline: auto;
+  border-radius: 24px;
+  overflow: hidden;
+  // box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  background: transparent;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+// ══ SERVICE SECTIONS ════════════════════════════════
+.serviceSection, .serviceSectionAlt {
+  padding-block: 100px;
+  overflow: hidden;
+
+  @include below(md) { padding-block: 72px; }
+}
+
+.serviceSectionAlt {
+  background: $gray-50;
+}
+
+.serviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+
+  @include below(lg) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+.reverse {
+  @include above(lg) {
+    .serviceContent { order: 2; }
+    .serviceImgWrap { order: 1; }
+  }
+}
+
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.serviceTitle {
+  font-size: 32px;
+  font-weight: $fw-800;
+  color: $gray-800;
+  line-height: $lh-tight;
+}
+
+.serviceDesc {
+  font-size: 15px;
+  color: $gray-600;
+  line-height: 1.7;
+}
+
+.serviceBullets {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $gray-700;
+  }
+}
+
+.trainingSubtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: $gray-800;
+  margin-top: 12px;
+}
+
+.serviceBtn {
+  width: fit-content;
+  margin-top: 8px;
+}
+
+.serviceImgWrap {
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: $shadow-lg;
+}
+
+.serviceImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+// ══ WHY SECTION ═════════════════════════════════════
+.whySection {
+  padding-block: 100px;
+  background: $white;
+  text-align: center;
+}
+
+.whyHeader {
+  margin-bottom: 64px;
+}
+
+.whyTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: $gray-800;
+  margin-bottom: 16px;
+}
+
+.whySubtitle {
+  font-size: 15px;
+  color: $gray-600;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-inline: auto;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+
+  @include below(lg) { grid-template-columns: repeat(2, 1fr); }
+  @include below(sm) { grid-template-columns: 1fr; }
+}
+
+.whyCard {
+  padding: 40px 24px;
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-xl;
+    border-color: transparent;
+  }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: $gray-800;
+    line-height: $lh-tight;
+  }
+}
+
+.whyIcon {
+  width: 60px;
+  height: 60px;
+  background: $gray-50;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $purple-700;
+}

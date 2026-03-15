@@ -1,0 +1,203 @@
+import type { Course, Service } from '@/types';
+
+export const COURSES: Course[] = [
+   {
+    slug: 'ai-ml',
+    title: 'Artificial Intelligence',
+    pageTitle:'Understand Artificial Intelligence and Smart Technologies',
+    tagline: 'Understand and build intelligent systems',
+    icon: '/images/icons/ai.svg',
+    description: 'Understand how AI systems work, how machines learn, and how intelligent technologies are used in everyday life.',
+    subDescription:'Learn how machines learn from data and how AI systems power modern technologies.',
+    overview: 'A comprehensive introduction to AI and machine learning — covering the theory, tools, and real-world applications that are transforming every industry from healthcare to finance.',
+    duration: '10 weeks',
+    level: 'Intermediate',
+    modules: [
+      { title: 'Foundations of AI', summary: 'What AI is, its history, and its societal impact.', topics: ['Narrow vs general AI', 'History of AI', 'Ethics & bias', 'AI landscape'] },
+      { title: 'Machine Learning Basics', summary: 'How machines learn from data.', topics: ['Supervised vs unsupervised', 'Training & testing', 'Feature engineering', 'Model selection'] },
+      { title: 'Deep Learning & Neural Networks', summary: 'The architecture behind modern AI.', topics: ['What neural networks are', 'CNNs & RNNs', 'Transfer learning', 'Fine-tuning'] },
+      { title: 'AI Applications', summary: 'Real-world AI in action.', topics: ['Computer vision', 'NLP & chatbots', 'Recommendation systems', 'Generative AI'] },
+    ],
+    outcomes: ['Explain how AI and ML systems work', 'Train and evaluate basic ML models', 'Understand deep learning architectures', 'Apply AI tools to real problems'],
+    tools: ['Python', 'TensorFlow / PyTorch (intro)', 'Google Colab', 'Hugging Face'],
+    skills: ['Conceptual AI thinking', 'Model evaluation', 'Python for ML', 'Critical AI ethics'],
+    careers: [{ icon: '🤖', label: 'AI Engineer' }, { icon: '🔬', label: 'ML Researcher' }, { icon: '📱', label: 'AI Product Manager' }, { icon: '🏥', label: 'AI in Healthcare' }],
+  },
+   {
+    slug: 'data-science',
+    title: 'Data Science',
+    pageTitle: 'Learn Data Science and Build Intelligent Data Models',
+    tagline: 'Build predictive models and intelligent systems',
+    icon: '/images/icons/ds.svg',
+    description: 'Explore how data is used to build predictive models and support decision-making using modern techniques.',
+    subDescription: 'Discover how data scientists transform raw data into predictive insights.',
+    overview: 'An advanced programme covering statistical modelling, machine learning algorithms, and real-world applications of data science across industries including finance, healthcare, and technology.',
+    duration: '12 weeks',
+    level: 'Intermediate – Advanced',
+    modules: [
+      { title: 'Python for Data Science', summary: 'Core Python skills for data work.', topics: ['NumPy & pandas', 'Data wrangling', 'Jupyter notebooks', 'Data pipelines'] },
+      { title: 'Statistical Foundations', summary: 'Probability and statistics for machine learning.', topics: ['Probability theory', 'Hypothesis testing', 'Regression basics', 'Bayesian thinking'] },
+      { title: 'Machine Learning', summary: 'Build and evaluate predictive models.', topics: ['Supervised learning', 'Unsupervised learning', 'Model evaluation', 'Feature engineering'] },
+      { title: 'Capstone Project', summary: 'Apply your skills on a real dataset.', topics: ['Project scoping', 'End-to-end pipeline', 'Model deployment', 'Presentation'] },
+    ],
+    outcomes: ['Build and deploy machine learning models', 'Apply statistical analysis to real problems', 'Work with large, complex datasets', 'Present findings to technical audiences'],
+    tools: ['Python (scikit-learn, NumPy)', 'Jupyter Notebook', 'Matplotlib / Seaborn'],
+    skills: ['Statistical thinking', 'Model evaluation', 'Python programming', 'Research methods'],
+    careers: [{ icon: '🔬', label: 'Data Scientist' }, { icon: '🤖', label: 'ML Engineer' }, { icon: '📊', label: 'Quantitative Analyst' }, { icon: '🏥', label: 'Healthcare Analytics' }],
+  },
+  {
+    slug: 'data-analysis',
+    title: 'Learn Data Analysis and Turn Raw Data into Meaningful Insights',
+    tagline: 'Understand how organizations use data to make smarter decisions and solve real problems.',
+    icon: '/images/icons/da.svg',
+    pageTitle: 'Learn Data Analysis and Turn Raw Data into Meaningful Insights',
+    description: 'Learn how to collect, organize, and interpret data using tools like Excel, SQL, Power BI, and Python.',
+   subDescription:'Learn how to confidently use computers, internet tools, and modern digital technologies for school, work, and personal productivity.',
+    overview: 'This course teaches you how to collect, clean, analyse, and visualise data using industry-standard tools. You will learn to extract meaningful insights from complex datasets and communicate them effectively to stakeholders.',
+    duration: '8 weeks',
+    level: 'Beginner – Intermediate',
+    modules: [
+      { title: 'Introduction to Data Analysis', summary: 'Understand what data analysis is and why it matters in every industry.', topics: ['What is data analysis?', 'Types of data', 'The data analysis workflow', 'Tools overview'] },
+      { title: 'Data Collection & Cleaning', summary: 'Learn to gather and prepare data for analysis.', topics: ['Data sources', 'Handling missing values', 'Data transformation', 'Data validation'] },
+      { title: 'Exploratory Data Analysis', summary: 'Uncover patterns with statistical methods.', topics: ['Descriptive statistics', 'Correlation analysis', 'Outlier detection', 'Data profiling'] },
+      { title: 'Data Visualisation', summary: 'Build compelling charts and dashboards.', topics: ['Choosing the right chart', 'Building dashboards', 'Storytelling with data', 'Presentation techniques'] },
+    ],
+    outcomes: ['Analyse real-world datasets confidently', 'Build clear and insightful visualisations', 'Communicate findings to stakeholders', 'Use Excel and Python for analysis'],
+    tools: ['Excel / Google Sheets', 'Python (pandas)', 'Tableau / Power BI'],
+    skills: ['Critical thinking', 'Statistical reasoning', 'Data storytelling', 'Problem-solving'],
+    careers: [{ icon: '📈', label: 'Data Analyst' }, { icon: '🏦', label: 'Business Analyst' }, { icon: '🔬', label: 'Research Analyst' }, { icon: '🤖', label: 'AI & ML' }],
+  },
+ 
+  {
+    slug: 'digital-literacy',
+    title: 'Digital Literacy',
+    tagline: 'Navigate the digital world with confidence',
+    icon: '/images/icons/dl.svg',
+    pageTitle: 'Build Essential Digital Skills for the Modern World',
+    description: 'Build essential computer and internet skills that are important for school, work, and everyday digital life.',
+   subDescription:'Learn how to confidently use computers, internet tools, and modern digital technologies for school, work, and personal productivity.',
+    overview: 'A practical introduction to using digital tools, staying safe online, and leveraging technology for productivity — designed for beginners and non-tech professionals at every level.',
+    duration: '4 weeks',
+    level: 'Beginner',
+    modules: [
+      { title: 'Computing Fundamentals', summary: 'Understand hardware, software, and operating systems.', topics: ['Using a computer', 'File management', 'Internet basics', 'Cloud storage'] },
+      { title: 'Productivity Tools', summary: 'Get things done with popular office applications.', topics: ['Word processing', 'Spreadsheets', 'Presentations', 'Email & calendar'] },
+      { title: 'Online Safety', summary: 'Stay secure in a connected world.', topics: ['Passwords & authentication', 'Recognising scams', 'Privacy settings', 'Safe browsing'] },
+    ],
+    outcomes: ['Use computers and the internet confidently', 'Create documents, spreadsheets, and presentations', 'Stay safe and private online', 'Communicate professionally digitally'],
+    tools: ['Microsoft Office / Google Workspace', 'Web browsers', 'Email platforms'],
+    skills: ['Digital confidence', 'Online communication', 'File management', 'Cyber safety'],
+    careers: [{ icon: '🏢', label: 'Office Administrator' }, { icon: '📋', label: 'Project Coordinator' }, { icon: '🎓', label: 'Educator' }, { icon: '🛒', label: 'E-Commerce' }],
+  },
+  {
+    slug: 'python',
+    title: 'Python',
+    tagline: "Learn the world's most versatile programming language",
+    icon: '/images/icons/py.svg',
+    pageTitle:'Learn Python Programming and Build Real-World Applications',
+    description: 'Develop practical programming skills using one of the most popular and versatile programming languages in the world.',
+    subDescription:'Develop practical programming skills using one of the most popular and versatile programming languages in the world.',
+    overview: 'Python is the most popular language for data science, automation, web development, and AI. This course takes you from zero to writing real programmes with clean, professional code.',
+    duration: '8 weeks',
+    level: 'Beginner – Intermediate',
+    modules: [
+      { title: 'Python Fundamentals', summary: 'Variables, data types, and control flow.', topics: ['Variables & data types', 'Conditionals & loops', 'Functions', 'Error handling'] },
+      { title: 'Data Structures', summary: 'Working with lists, dicts, and more.', topics: ['Lists, tuples, sets', 'Dictionaries', 'List comprehensions', 'Nested structures'] },
+      { title: 'File I/O & Libraries', summary: 'Read files and use Python packages.', topics: ['Reading & writing files', 'pip & virtual envs', 'Popular libraries', 'APIs'] },
+      { title: 'Projects', summary: 'Build real things with your skills.', topics: ['CLI tools', 'Data scripts', 'Web scraping basics', 'Automation'] },
+    ],
+    outcomes: ['Write clean, readable Python code', 'Build useful automation scripts', 'Work with files, APIs, and data', 'Understand object-oriented concepts'],
+    tools: ['Python 3', 'VS Code', 'Jupyter Notebook', 'GitHub'],
+    skills: ['Programming logic', 'Debugging', 'Algorithm thinking', 'Code organisation'],
+    careers: [{ icon: '💻', label: 'Software Developer' }, { icon: '📊', label: 'Data Analyst' }, { icon: '⚙️', label: 'DevOps / Automation' }, { icon: '🤖', label: 'AI Engineer' }],
+  },
+  {
+    slug: 'coding-for-kids',
+    title: 'Coding for Kids',
+    tagline: 'Introduce your child to the world of coding',
+    icon: '/images/icons/ck.svg',
+    pageTitle: 'Introduce Your Child to the World of Coding',
+    description: 'Introduce young learners to programming through fun activities, games, and creative coding projects.',
+   subDescription:'Fun, interactive programming lessons designed to help children learn creativity, problem-solving, and technology skills.',
+    overview: 'Coding for Kids introduces children to computational thinking and programming through games, animations, and creative projects. We use visual tools to make coding fun and easy to understand, instead of focusing only on technical concepts.',
+    duration: '6 weeks',
+    level: 'Beginner',
+    ageRange: '8 – 14 years',
+    modules: [
+      { title: 'Introduction to Coding & Computational Thinking', summary: 'Children begin understanding what programming is and how computers follow instructions.', topics: ['What coding means', 'Basic problem-solving strategies', 'Understanding sequences and structure', 'Think like a programmer'] },
+      { title: 'Block-Based Programming', summary: 'Students learn to create programmes using drag-and-drop coding platforms.', topics: ['Introduction to Scratch programming', 'Creating simple interactive projects', 'Using coding blocks', 'Understanding loops and conditions'] },
+      { title: 'Game and Animation Design', summary: 'Children learn to design their own digital projects.', topics: ['Creating animated characters', 'Adding sound and interaction', 'Designing simple games', 'Storytelling through animation'] },
+      { title: 'Creative Coding Projects', summary: "Learners apply their knowledge to build unique projects.", topics: ['Game design challenges', 'Interactive project development', 'Animation storytelling', 'Team collaboration'] },
+      { title: 'Introduction to Python Programming', summary: 'Older students are introduced to simple Python programming concepts.', topics: ['Basic Python commands', 'Creating beginner coding projects', 'Writing simple programs'] },
+    ],
+    outcomes: ['Understand the basic concepts of coding', 'Build simple programmes using visual tools', 'Design animations and interactive games', 'Develop logical thinking and problem-solving skills', 'Express creativity through digital projects'],
+    tools: ['Scratch', 'Career programming platforms', 'Python (beginner)', 'Interactive learning platforms'],
+    skills: ['Logical thinking', 'Problem-solving abilities', 'Creativity with technology', 'Early programming knowledge', 'Analytical thinking'],
+    careers: [{ icon: '💻', label: 'Software development' }, { icon: '🎨', label: 'Game design' }, { icon: '🤖', label: 'Robotics' }, { icon: '🧠', label: 'Artificial Intelligence' }],
+  },
+  
+ 
+];
+
+export const SERVICES: Service[] = [
+  {
+    slug: 'data-analysis',
+    icon: '/images/icons/data-analysis.svg',
+    title: 'Data Analysis Solutions',
+    description: 'We help organizations transform raw data into meaningful insights that support smarter decision-making.',
+    bullets: ['Develop and deliver training materials', 'Student-centred learning approaches', 'Improve instructional materials', 'Create interactive learning environments', 'Align content to organisational goals'],
+  },
+  {
+    slug: 'tech-skills',
+    icon: '/images/icons/tech-skills.svg',
+    title: 'Tech Skills Training',
+    description: 'Hands-on technology training programs equipping learners with practical skills valuable in modern workplaces..',
+    bullets: ['Collect and clean data from multiple sources', 'Identify trends and key patterns', 'Compile reports and visual dashboards', 'Provide training in data tools', 'Support data-driven strategy and planning'],
+  },
+  {
+    slug: 'instructional-design',
+    icon: '/images/icons/instructional-design.svg',
+    title: 'Instructional Design',
+    description: 'Engaging learning materials, courses, and curriculum tailored to different audiences.',
+    bullets: ['Data Analysis', 'Python programming', 'Data Science', 'AI/Machine Intelligence', 'Digital Literacy', 'Coding for Kids', 'Microsoft Office suite', 'Customised training modules'],
+  },
+  {
+    slug: 'educational-consultancy',
+    icon: '/images/icons/educational-consultancy.svg',
+    title: 'Educational Consultancy',
+    description: 'We work with schools and institutions to improve learning systems and integrate modern technology into education.',
+    bullets: ['Curriculum development', 'Learning assessments and reviews', 'Technology integration planning', 'Institutional quality support'],
+  },
+  {
+    slug: 'educational-resources',
+    icon: '/images/icons/educational-resources.svg',
+    title: 'Educational Resources & Tools',
+    description: 'High-quality digital tools, learning devices, and educational resources for modern teaching environments.',
+    bullets: ['Develop custom learning resources', 'Recommend and implement EdTech tools', 'Support self-directed learning projects', 'Reference materials and knowledge guides', 'Guide learners to effective learning strategies'],
+  },
+];
+
+export const FAQS = [
+  { q: 'What courses does Hogens Technologies Ltd offer?', a: 'We offer Data Analysis, Data Science, Digital Literacy, Coding for Kids, Python, and AI/Machine Intelligence. Each course is designed to be practical and beginner-friendly.' },
+  { q: 'Do I need prior technology experience?', a: 'Not at all. Most of our courses are designed for beginners. We guide you from the basics and build up at a comfortable pace.' },
+  { q: "Who can enrol in the programs?", a: 'Anyone! Whether you are a student, professional, or organisation looking to upskill a team, our programmes are open to all. Coding for Kids is designed specifically for learners aged 8–14.' },
+  { q: 'How are the classes conducted?', a: 'Our courses combine live online sessions, recorded content, practical exercises, and mentorship support for a complete learning experience.' },
+  { q: 'What skills will I gain from these courses?', a: 'Depending on your course, you will gain practical technical skills, critical thinking, problem-solving, and real-world project experience that directly supports career growth.' },
+  { q: 'How do I register for a course?', a: 'Click the "Get Started" button at the top of any page or visit the Courses section to choose your programme and register online.' },
+];
+
+export const LEARNING_STEPS = [
+  { num: '01', color: '#F23936', label: '1. Choose Your Course',  desc: 'Explore our technology programs and select the course that matches your interests or career goals. Our courses are designed for beginners, students, professionals, and young learners.' },
+  { num: '02', color: '#008EFF', label: '2. Learn the Fundamentals',      desc: 'We start by helping learners understand the core concepts behind each subject. This builds a strong foundation before moving into more practical work.' },
+  { num: '03', color: '#45C646', label: '3. Practice With Real Tools',        desc: 'Students work with real digital tools and technologies used in modern workplaces. Through guided exercises and hands-on activities, learners apply what they learn step by step.' },
+  { num: '04', color: '#A855F7', label: '4. Build Confidence and Skills',  desc: 'By the end of the program, students gain practical knowledge and confidence in using digital tools, analyzing data, solving problems, and understanding modern technologies.' },
+];
+
+export const LEARN = [
+  { icon: '/images/icons/work.svg', label: 'Work with real digital tools and software' },
+  { icon: '/images/icons/practice.svg', label: 'Practice solving real-world problems' },
+  { icon: '/images/icons/learn.svg', label: 'Learn concepts step by step' },
+  { icon: '/images/icons/build.svg', label: 'Build confidence with guided exercises' }
+]
+
+export const getCourse = (slug: string) => COURSES.find(c => c.slug === slug);

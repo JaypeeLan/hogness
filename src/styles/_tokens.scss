@@ -1,0 +1,136 @@
+// ═══════════════════════════════════════════════
+// HOGENSS — DESIGN TOKENS
+// Extracted pixel-accurately from Figma screenshots
+// ═══════════════════════════════════════════════
+
+// ── Brand Colors ────────────────────────────────
+$purple-700:   #6600C9;   // primary CTA, links, accents
+$purple-800:   #5B22C0;   // hover state for primary
+$purple-900:   #280C5C;   // hero / dark section background
+$purple-solid: #5C2BE2;   // mission section, CTA banner bg
+$purple-tag:   rgba(108, 43, 217, 0.10); // tag background
+$purple-check: rgba(108, 43, 217, 0.12); // check circle bg
+
+// ── Neutrals ────────────────────────────────────
+$white:        #FFFFFF;
+$gray-50:      #F8F7FC;   // alternate section bg (very light lavender)
+$gray-100:     #F1EFF8;   // card hover, input bg
+$gray-200:     #E8E6F0;   // borders
+$gray-300:     #CCC9DC;   // stronger border
+$gray-900:     #0D0D0D;   // footer bg
+$gray-800:     #1A1A2E;   // primary text
+$gray-700:     #4A4A63;   // body text medium
+$gray-600:     #6B6B8A;   // muted/secondary text
+$gray-500:     #9494B0;   // placeholder text
+$gray-400:     #BBBBD0;   // disabled
+
+// ── Semantic ────────────────────────────────────
+$color-bg:           $white;
+$color-bg-alt:       $gray-50;
+$color-text:         $gray-800;
+$color-text-muted:   $gray-600;
+$color-border:       $gray-200;
+$color-primary:      $purple-700;
+$color-primary-hover:$purple-800;
+$color-hero-bg:      $purple-900;
+$color-banner-bg:    $purple-solid;
+$color-footer-bg:    $gray-900;
+$color-footer-text:  #8A8AA8;
+
+// ── Typography ──────────────────────────────────
+$font-sans:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+// Note: design uses a clean sans-serif — Inter matches closely
+
+// Font sizes (px → rem at 16px base)
+$fs-11:  0.6875rem;  // 11px
+$fs-12:  0.75rem;    // 12px
+$fs-13:  0.8125rem;  // 13px
+$fs-14:  0.875rem;   // 14px
+$fs-15:  0.9375rem;  // 15px
+$fs-16:  1rem;       // 16px
+$fs-18:  1.125rem;   // 18px
+$fs-20:  1.25rem;    // 20px
+$fs-22:  1.375rem;   // 22px
+$fs-24:  1.5rem;     // 24px
+$fs-28:  1.75rem;    // 28px
+$fs-32:  2rem;       // 32px
+$fs-36:  2.25rem;    // 36px
+$fs-42:  2.625rem;   // 42px
+$fs-48:  3rem;       // 48px
+
+// Font weights
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+$fw-800: 800;
+
+// Line heights
+$lh-tight:   1.15;
+$lh-snug:    1.25;
+$lh-normal:  1.5;
+$lh-relaxed: 1.65;
+$lh-loose:   1.8;
+
+// ── Spacing ─────────────────────────────────────
+// 4px grid
+$sp-1:   4px;
+$sp-2:   8px;
+$sp-3:   12px;
+$sp-4:   16px;
+$sp-5:   20px;
+$sp-6:   24px;
+$sp-8:   32px;
+$sp-10:  40px;
+$sp-12:  48px;
+$sp-14:  56px;
+$sp-16:  64px;
+$sp-20:  80px;
+$sp-24:  96px;
+$sp-28:  112px;
+$sp-32:  128px;
+
+// ── Layout ──────────────────────────────────────
+$container-width: 1200px;
+$container-px:    24px;
+$container-px-sm: 16px;
+$header-height:   72px;
+
+// ── Radius ──────────────────────────────────────
+$r-2:   2px;
+$r-4:   4px;
+$r-6:   6px;
+$r-8:   8px;
+$r-12:  12px;
+$r-16:  16px;
+$r-20:  20px;
+$r-24:  24px;
+$r-full: 9999px;
+
+// ── Shadows ─────────────────────────────────────
+$shadow-xs:  0 1px 2px rgba(0,0,0,0.05);
+$shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+$shadow-md:  0 4px 6px rgba(0,0,0,0.07), 0 2px 4px rgba(0,0,0,0.05);
+$shadow-lg:  0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
+$shadow-xl:  0 20px 25px rgba(0,0,0,0.10), 0 10px 10px rgba(0,0,0,0.04);
+
+// ── Transitions ─────────────────────────────────
+$t-fast:   150ms cubic-bezier(0.16, 1, 0.3, 1);
+$t-base:   200ms cubic-bezier(0.16, 1, 0.3, 1);
+$t-slow:   300ms cubic-bezier(0.16, 1, 0.3, 1);
+$t-slower: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+
+// ── Z-index ─────────────────────────────────────
+$z-base:    1;
+$z-raised:  10;
+$z-sticky:  100;
+$z-nav:     200;
+$z-overlay: 300;
+$z-modal:   400;
+$z-loader:  500;
+
+// ── Breakpoints ─────────────────────────────────
+$bp-sm:  640px;
+$bp-md:  768px;
+$bp-lg:  1024px;
+$bp-xl:  1280px;

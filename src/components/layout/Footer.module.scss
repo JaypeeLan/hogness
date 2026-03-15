@@ -1,0 +1,167 @@
+@use '@/styles/tokens' as *;
+@use '@/styles/mixins' as *;
+
+.footer {
+  background: #000000;
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 40px 40px 0 0;
+}
+
+.top {
+  padding-block: 64px 48px;
+
+  @include below(md) { padding-block: 48px 40px; }
+  @include below(sm) { padding-block: 40px 32px; }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr 1.1fr 1fr;
+  gap: 48px;
+
+  @include below(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 48px;
+  }
+
+  @include below(sm) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+// ── Brand column ─────────────────────────────────
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+
+  &:hover { opacity: 0.85; }
+}
+
+.brandName {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brandTitle {
+  font-size: $fs-15;
+  font-weight: $fw-800;
+  color: $white;
+  letter-spacing: 0.05em;
+}
+
+.brandSub {
+  font-size: 9px;
+  font-weight: $fw-500;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.brandDesc {
+  font-size: $fs-13;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: $lh-relaxed;
+  max-width: 240px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  background: transparent;
+  color: $white;
+  border: none;
+  transition: color $t-fast, transform $t-fast;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    color: $purple-700;
+    transform: translateY(-2px);
+  }
+}
+
+// ── Generic columns ──────────────────────────────
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.colHeading {
+  font-size: $fs-14;
+  font-weight: $fw-600;
+  color: $white;
+}
+
+.colList {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.colLink {
+  font-size: $fs-14;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color $t-fast;
+
+  &:hover { color: $white; }
+}
+
+.contactItem {
+  font-size: $fs-14;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: $lh-relaxed;
+}
+
+.helpBtn {
+  margin-top: 12px;
+  align-self: flex-start;
+  border-radius: 9999px !important;
+  background-color: #6C2BD9 !important;
+  color: #fff !important;
+  padding: 10px 28px !important;
+  font-size: $fs-13 !important;
+  font-weight: $fw-600 !important;
+  border: none !important;
+
+  &:hover {
+    background-color: #5B22C0 !important;
+  }
+}
+
+// ── Bottom bar ────────────────────────────────────
+.bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-block: 18px;
+}
+
+.copy {
+  font-size: $fs-11;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: left;
+  letter-spacing: 0.03em;
+}
