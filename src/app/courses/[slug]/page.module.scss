@@ -29,7 +29,7 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr; // Changed to 60/40 ratio
+  grid-template-columns: 1fr 1fr; // Balanced for 680x750 image
   gap: 60px;
   align-items: center;
 

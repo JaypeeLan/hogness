@@ -61,8 +61,8 @@ export default async function CoursePage({ params }: Props) {
                 <Image 
                   src={`/images/courses/${course.slug}-page-img.png`} 
                   alt={course.title} 
-                  width={600} 
-                  height={500} 
+                  width={680} 
+                  height={750} 
                   className={styles.heroImg}
                   priority
                 />
