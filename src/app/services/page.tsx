@@ -15,7 +15,7 @@ export default function ServicesPage() {
       {/* ══ HERO ════════════════════════════════════════════ */}
       <section className={styles.heroOuter}>
         <div className={styles.heroBg}>
-          <div className={styles.heroContentWrapper}>
+          <div className="container">
             <div className={`${styles.heroContent} anim`}>
               <span className={styles.heroBadge}>
                 <NodeIcon />

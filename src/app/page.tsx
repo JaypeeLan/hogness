@@ -16,7 +16,7 @@ export default function HomePage() {
       {/* ══ HERO — full-width centered text, wide image below ══ */}
       <section className={styles.heroOuter}>
         <div className={styles.heroBg}>
-          <div className={styles.heroContentWrapper}>
+          <div className="container">
             <div className={`${styles.heroContent} anim`}>
               <span className={styles.heroBadge}>
                 <NodeIcon />

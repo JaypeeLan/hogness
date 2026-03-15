@@ -16,7 +16,7 @@ export default function AboutPage() {
       {/* ══ HERO =============================================== */}
       <section className={styles.heroOuter}>
         <div className={styles.heroBg}>
-          <div className={styles.heroContentWrapper}>
+          <div className="container">
             <div className={styles.heroGrid}>
               <div className={styles.heroImgWrap}>
                 <img src="/images/sections/about-section-img.png" alt="Student learning" loading="lazy" className={styles.heroImage} />
