@@ -38,35 +38,33 @@ export default async function CoursePage({ params }: Props) {
     <main className={styles.main}>
       {/* ══ HERO ════════════════════════════════════════════ */}
       <section className={styles.heroOuter}>
-        <div className={styles.heroBg}>
-          <div className="container">
-            <div className={styles.heroGrid}>
-              <div className={`${styles.heroContent} anim`}>
-                <div className={styles.heroBadge}>
-                  <NodeIcon />
-                  <span>{course.slug.replace('-', ' ').toUpperCase()}</span>
-                </div>
-                <h1 className={styles.heroTitle}>{course.pageTitle}</h1>
-                <p className={styles.heroDesc}>{course.subDescription}</p>
-                <div className={styles.heroBtnGroup}>
-                  <Button as="link" href="/about#contact" variant="primary" size="lg">
-                    Enroll Now &rarr;
-                  </Button>
-                  <Button as="link" href="#overview" variant="white" size="lg" className={styles.whiteBtn}>
-                    Download Course Outline
-                  </Button>
-                </div>
+        <div className="container">
+          <div className={styles.heroGrid}>
+            <div className={`${styles.heroContent} anim`}>
+              <div className={styles.heroBadge}>
+                <NodeIcon />
+                <span>{course.slug.replace('-', ' ').toUpperCase()}</span>
               </div>
-              <div className={styles.heroImgWrap}>
-                <Image 
-                  src={`/images/courses/${course.slug}-page-img.png`} 
-                  alt={course.title} 
-                  width={680} 
-                  height={750} 
-                  className={styles.heroImg}
-                  priority
-                />
+              <h1 className={styles.heroTitle}>{course.pageTitle}</h1>
+              <p className={styles.heroDesc}>{course.subDescription}</p>
+              <div className={styles.heroBtnGroup}>
+                <Button as="link" href="/about#contact" variant="primary" size="lg">
+                  Enroll Now &rarr;
+                </Button>
+                <Button as="link" href="#overview" variant="white" size="lg" className={styles.whiteBtn}>
+                  Download Course Outline
+                </Button>
               </div>
+            </div>
+            <div className={styles.heroImgWrap}>
+              <Image 
+                src={`/images/courses/${course.slug}-page-img.png`} 
+                alt={course.title} 
+                width={680} 
+                height={750} 
+                className={styles.heroImg}
+                priority
+              />
             </div>
           </div>
         </div>

@@ -9,27 +9,14 @@
 .heroOuter {
   margin-top: $header-height;
   position: relative;
-  background: $white;
-  padding-bottom: 40px;
+  background: $purple-900; // Unified background
+  padding-block: 80px;
+  border-radius: 0 0 80px 80px;
+
+  @include below(md) { padding-block: 60px; border-radius: 0 0 40px 40px; }
 }
 
-.heroBg {
-  background: $purple-900;
-  padding-top: 64px;
-  padding-bottom: 280px; 
-  margin-top: 24px;
-  margin-inline: 200px; // Match 200px margin
-  border-radius: 40px 40px 80px 80px;
-  overflow: hidden;
-  text-align: center;
-
-  @include below(xl) { margin-inline: 40px; }
-  @include below(md) {
-    margin-inline: 16px;
-    border-radius: 20px 20px 40px 40px;
-    padding-bottom: 100px;
-  }
-}
+// heroBg removed
 
 .heroContent {
   max-width: 800px;
@@ -70,20 +57,12 @@
   line-height: 1.7;
 }
 
-.heroImgContainer {
-  position: relative;
-  margin-top: -200px;
-  z-index: 5;
-  padding-inline: 40px;
-}
-
 .heroImgInner {
   max-width: 1000px;
   margin-inline: auto;
   border-radius: 24px;
   overflow: hidden;
-  // box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-  background: transparent;
+  margin-top: 48px;
 }
 
 .heroImage {
