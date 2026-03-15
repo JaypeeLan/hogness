@@ -80,7 +80,7 @@ export default function HomePage() {
             <div className={styles.aboutImgWrap}>
               <Image src="/images/sections/about-section-img.png" alt="Student learning" loading="lazy" width={660} height={829} className={styles.aboutImage} />
             </div>
-            <div className={`${styles.aboutCard} anim`}>
+            <div className={`${styles.aboutContent} anim`}>
              
               <h2 className={styles.aboutH2}>
                   About Hogens<br/>Technologies Ltd

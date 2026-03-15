@@ -43,7 +43,7 @@ export default function AboutPage() {
       <section className={styles.storySection}>
         <div className="container">
           <div className={styles.storyImgWrap}>
-            <Image src="/images/sections/story-img.png" alt="Our Story" width={1200} height={500} className={styles.storyImg} />
+            <Image src="/images/sections/story-img.png" alt="Our Story" width={800} height={500} className={styles.storyImg} />
           </div>
           <div className={`${styles.storyContent} anim`}>
             <h2 className={styles.storyTitle}>Our Story</h2>
