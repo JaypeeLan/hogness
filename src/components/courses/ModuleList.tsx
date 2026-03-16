@@ -1,6 +1,18 @@
 'use client';
 
+import { useState } from 'react';
+import styles from '@/app/courses/[slug]/page.module.scss';
 import { ChevronDownIcon, DotIcon } from '@/components/ui/Icons';
+
+interface Module {
+  title: string;
+  summary: string;
+  topics: string[];
+}
+
+interface Props {
+  modules: Module[];
+}
 
 export default function ModuleList({ modules }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
