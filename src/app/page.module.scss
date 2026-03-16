@@ -28,9 +28,9 @@
 
   @include below(md) {
     margin-top: 0;
-    border-radius: 60px;
-    padding-top: 60px;
-    padding-bottom: 100px;
+    border-radius: 30px;
+    padding-top: 48px;
+    padding-bottom: 120px;
   }
 }
 
@@ -73,6 +73,7 @@
   @include below(lg) { font-size: 40px; }
   @include below(sm) {
     font-size: 32px;
+    line-height: 1.25;
     br { display: none; }
   }
 }
@@ -90,6 +91,16 @@
   justify-content: center;
   gap: 50px;
   margin-top: 26px;
+
+  @include below(md) {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+
+    > * {
+      width: 100%;
+    }
+  }
 }
 
 .heroImgContainer {
@@ -97,6 +108,11 @@
   margin-top: -200px; // Overlap value
   z-index: 5;
   padding-inline: 40px;
+
+  @include below(md) {
+    margin-top: -80px;
+    padding-inline: 16px;
+  }
 }
 
 .heroImgInner {
@@ -105,6 +121,10 @@
   border-radius: 24px;
   overflow: hidden;
   background: transparent;
+
+  @include below(md) {
+    border-radius: 16px;
+  }
 }
 
 .heroImage {
@@ -148,13 +168,31 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 
-  @include below(md) { grid-template-columns: 1fr; gap: 32px; }
+  @include below(md) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px; // space for scrollbar
+    margin-inline: -16px;
+    padding-inline: 16px;
+    
+    // Hide scrollbar for a cleaner look
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .trustCard {
   display: flex;
   flex-direction: column;
   gap: 14px;
+
+  @include below(md) {
+    min-width: 280px; // Width of cards in mobile scroll
+    scroll-snap-align: center;
+  }
 }
 
 .trustCardImg {
@@ -215,7 +253,14 @@
     margin-inline: auto;
     height: 480px;
   }
-  @include below(sm) { height: 320px; }
+  @include below(md) {
+    border-radius: 20px;
+  }
+  @include below(sm) { 
+    height: 380px;
+    max-width: 100%;
+    margin-inline: 0; // Ensure it spans to container edge
+  }
 }
 
 .aboutImage {
@@ -239,13 +284,21 @@
   @include below(xl) { padding: 60px 48px; }
   @include below(md) {
     padding: 48px 24px;
-    border-radius: 60px;
+    border-radius: 20px;
+    margin-top: -24px; // Overlap with image slightly
+    position: relative;
+    z-index: 2;
   }
   @include below(lg) { 
     align-items: center;
     text-align: center;
   }
-  @include below(sm) { padding: 32px 20px; }
+  @include below(sm) { 
+    padding: 40px 24px;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+  }
 }
 
 .aboutTag {
@@ -272,13 +325,20 @@
   letter-spacing: -0.01em;
 
   @include below(lg) { font-size: 32px; }
-  @include below(sm) { font-size: 24px; }
+  @include below(sm) { 
+    font-size: 28px;
+    br { display: none; }
+  }
 }
 
 .aboutText {
   font-size: 13px;
   color: #E5E7EB;
   line-height: 1.8;
+
+  @include below(sm) {
+    font-size: 14px; // Bump slightly on mobile for readability
+  }
 }
 
 // ══ SHARED SECTION HEADER ════════════════════════════
@@ -482,7 +542,19 @@
   margin-inline: auto;
 
   @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-  @include below(sm) { grid-template-columns: 1fr; }
+  @include below(sm) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .courseCard {
@@ -495,6 +567,11 @@
   gap: 16px;
   text-decoration: none;
   transition: transform $t-base;
+
+  @include below(sm) {
+    min-width: 280px;
+    scroll-snap-align: center;
+  }
 
   &:hover { transform: translateY(-4px); }
 }
@@ -557,13 +634,30 @@
   max-width: 900px;
   margin-inline: auto;
 
-  @include below(md) { grid-template-columns: 1fr; gap: 32px; }
+  @include below(md) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    padding-bottom: 24px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+
+    &::-webkit-scrollbar { display: none; }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
 .processStep {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+
+  @include below(md) {
+    min-width: 300px;
+    scroll-snap-align: center;
+  }
 }
 
 .processDot {
@@ -716,10 +810,20 @@
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: 8px;
+
+  @include below(md) {
+    width: 64px;
+    height: 64px;
+  }
   
   svg {
     width: 28px;
     height: 28px;
+
+    @include below(md) {
+      width: 24px;
+      height: 24px;
+    }
   }
 }
 

@@ -101,7 +101,7 @@ We believe that when people understand technology, they can use it to create opp
               <ul className={styles.contactList}>
                 <li>
                   <div className={styles.ciIconBox}>
-                    <PhoneIconSm />
+                    <Image src="/call.png" alt="Call" width={20} height={20} />
                   </div>
                   <div className={styles.ciText}>
                     <span className={styles.ciLabel}>Phone:</span>
@@ -110,7 +110,7 @@ We believe that when people understand technology, they can use it to create opp
                 </li>
                 <li>
                   <div className={styles.ciIconBox}>
-                    <EmailIconSm />
+                    <Image src="/email.png" alt="Email" width={20} height={20} />
                   </div>
                   <div className={styles.ciText}>
                     <span className={styles.ciLabel}>Email:</span>

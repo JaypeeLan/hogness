@@ -20,7 +20,7 @@ export default function CTABanner({
         <div className={styles.inner}>
           <h2 className={styles.title}>{title}</h2>
           <p className={styles.desc}>{description}</p>
-          <Button as="link" href={ctaHref} size="lg" style={{ backgroundColor: '#000', color: '#fff', border: 'none', borderRadius: '4px', fontWeight: 'bold' }}>
+          <Button as="link" href={ctaHref} size="lg" className={styles.ctaBtn}>
             {ctaLabel}
           </Button>
         </div>

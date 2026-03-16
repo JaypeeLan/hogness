@@ -4,7 +4,11 @@
 .footer {
   background: #000000;
   color: rgba(255, 255, 255, 0.8);
-  border-radius: 40px 40px 0 0;
+  border-radius: 60px 60px 0 0; // Desktop curve
+  
+  @include below(md) {
+    border-radius: 30px 30px 0 0; // Mobile curve
+  }
 }
 
 .top {
@@ -26,7 +30,13 @@
 
   @include below(sm) {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
+    
+    // Custom mobile order: Company -> Courses -> Contact -> Brand
+    .col:nth-child(2) { order: 1; } // Company
+    .col:nth-child(3) { order: 2; } // Courses
+    .col:nth-child(4) { order: 3; } // Contact
+    .brand { order: 4; margin-top: 20px; } // Brand at bottom
   }
 }
 

@@ -5,15 +5,29 @@
   background: url('/images/heroes/cta-bg.png') no-repeat center center;
   background-size: cover;
   padding-block: 80px;
-  border-radius: 20px;
+  border-radius: 60px; // Desktop curve
   margin-inline: 200px;
   margin-bottom: 150px;
   position: relative;
   overflow: hidden;
 
   @include below(xl) { margin-inline: 40px; }
-  @include below(md) { padding-block: 64px; margin-inline: 16px; }
+  @include below(md) { 
+    padding-block: 64px; 
+    margin-inline: 16px; 
+    border-radius: 30px; // Mobile curve
+  }
   @include below(sm) { padding-block: 48px; }
+
+  // Overriding standard button for this section
+  .ctaBtn {
+    background: #000 !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 6px !important;
+    font-weight: $fw-700 !important;
+    padding: 14px 40px !important;
+  }
 }
 
 .inner {

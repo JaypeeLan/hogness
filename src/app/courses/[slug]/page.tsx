@@ -139,7 +139,7 @@ export default async function CoursePage({ params }: Props) {
               <h3 className={styles.subTitle}>Skills You Will Gain</h3>
               <ul className={styles.skillsList}>
                 {course.skills.map((skill, i) => (
-                  <li key={i}><BulletCheck /> {skill}</li>
+                  <li key={i}><Image src="/images/icons/skills-icon.svg" alt="Skill" width={22} height={22} style={{ flexShrink: 0 }} /> {skill}</li>
                 ))}
               </ul>
             </div>
@@ -187,14 +187,6 @@ function NodeIcon() {
   );
 }
 
-function BulletCheck() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="#E8F4FF"/>
-      <path d="M8 12L11 15L16 9" stroke="#008EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
 
 function BookIcon() {
   return (

@@ -25,8 +25,9 @@
   text-align: center;
 
   @include below(md) {
-    border-radius: 60px;
-    padding-bottom: 100px;
+    border-radius: 20px;
+    padding-top: 48px;
+    padding-bottom: 220px; // Gives enough space for the image to overlap
   }
 }
 
@@ -38,8 +39,13 @@
   padding-bottom: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 24px;
+  
+  @include below(md) {
+    padding-inline: 16px;
+    text-align: left;
+    gap: 16px;
+  }
 }
 
 .heroBadge {
@@ -54,6 +60,7 @@
   border-radius: $r-full;
   padding: 5px 14px;
   letter-spacing: 0.05em;
+  width: fit-content;
 }
 
 .heroH1 {
@@ -63,6 +70,7 @@
   line-height: 1.2;
 
   @include below(md) { font-size: 32px; }
+  @include below(sm) { font-size: 28px; }
 }
 
 .heroText {
@@ -75,7 +83,14 @@
   position: relative;
   margin-top: -200px;
   z-index: 5;
-  padding-inline: 40px;
+  @include below(md) {
+    margin-top: -160px;
+    padding-inline: 0; 
+  }
+  @include below(sm) {
+    margin-top: -160px;
+    padding-inline: 0;
+  }
 }
 
 .heroImgInner {
@@ -84,6 +99,10 @@
   border-radius: 24px;
   overflow: hidden;
   background: transparent;
+
+  @include below(md) {
+    border-radius: 20px;
+  }
 }
 
 .heroImage {
@@ -113,6 +132,9 @@
   @include below(lg) {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+  @include below(md) {
+    gap: 32px;
   }
 }
 
@@ -181,7 +203,11 @@
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
+  border-radius: 24px;
+  
+  @include below(md) {
+    border-radius: 16px;
+  }
 }
 
 // ══ WHY SECTION ═════════════════════════════════════
@@ -216,7 +242,17 @@
   gap: 24px;
 
   @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-  @include below(sm) { grid-template-columns: 1fr; }
+  @include below(sm) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none; // Firefox
+    &::-webkit-scrollbar { display: none; } // Chrome/Safari
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
 }
 
 .whyCard {
@@ -229,6 +265,14 @@
   align-items: center;
   gap: 20px;
   transition: all 0.3s ease;
+
+  @include below(sm) {
+    min-width: 280px;
+    scroll-snap-align: center;
+    align-items: flex-start;
+    text-align: left;
+    padding: 32px 24px;
+  }
 
   &:hover {
     transform: translateY(-5px);

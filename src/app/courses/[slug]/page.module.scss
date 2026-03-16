@@ -21,9 +21,9 @@
 
   @include below(xl) { margin-inline: 40px; }
   @include below(md) {
-    margin-inline: 16px;
-    border-radius: 60px;
-    padding-block: 60px;
+    margin-inline: 0;
+    border-radius: 20px;
+    padding-block: 48px;
   }
 }
 
@@ -39,6 +39,9 @@
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+  }
+  @include below(md) {
+    padding-inline: 16px;
   }
 }
 
@@ -86,6 +89,8 @@
   color: rgba(255,255,255,0.7);
   line-height: 1.7;
   max-width: 560px;
+
+  @include below(lg) { margin-inline: auto; }
 }
 
 .heroBtnGroup {
@@ -141,6 +146,8 @@
   display: flex;
   flex-direction: column;
   gap: 60px;
+
+  @include below(md) { gap: 40px; }
 }
 
 .sectionTitle {
@@ -194,7 +201,17 @@
   gap: 20px;
 
   @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-  @include below(sm) { grid-template-columns: 1fr; }
+  @include below(sm) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
 }
 
 .learnCard {
@@ -206,6 +223,11 @@
   flex-direction: column;
   gap: 16px;
   transition: all 0.3s ease;
+
+  @include below(sm) {
+    min-width: 260px;
+    scroll-snap-align: center;
+  }
 
   &:hover {
     border-color: $purple-tag;
@@ -337,6 +359,9 @@
     grid-template-columns: 1fr;
     gap: 60px;
   }
+  @include below(md) {
+    gap: 40px;
+  }
 }
 
 .subTitle {
@@ -373,7 +398,7 @@
 
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 14px;
     font-size: 15px;
     font-weight: 600;
@@ -406,7 +431,17 @@
   margin-bottom: 64px;
 
   @include below(lg) { grid-template-columns: repeat(2, 1fr); }
-  @include below(sm) { grid-template-columns: 1fr; }
+  @include below(sm) { 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+    gap: 16px;
+    padding-bottom: 24px;
+    margin-inline: -16px;
+    padding-inline: 16px;
+  }
 }
 
 .careerCard {
@@ -419,6 +454,11 @@
   align-items: center;
   gap: 20px;
   transition: all 0.3s ease;
+
+  @include below(sm) {
+    min-width: 220px;
+    scroll-snap-align: center;
+  }
 
   &:hover {
     border-color: $purple-tag;

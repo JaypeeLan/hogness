@@ -32,6 +32,10 @@
     gap: 32px;
     text-align: center;
   }
+  @include below(md) {
+    gap: 16px;
+    text-align: left;
+  }
 }
 
 .heroImgWrap {
@@ -45,7 +49,15 @@
     margin-inline: auto;
     height: 480px;
   }
-  @include below(sm) { height: 320px; }
+  @include below(md) { 
+    border-radius: 20px; 
+  }
+  @include below(sm) { 
+    height: 380px; 
+    max-width: 100%;
+    margin-inline: 0; // Ensure it stretches full width
+    border-radius: 20px;
+  }
 }
 
 .heroImage {
@@ -68,10 +80,16 @@
   @include below(xl) { padding: 60px 48px; }
   @include below(lg) { 
     padding: 60px 40px; 
-    align-items: center;
     border-radius: 60px;
   }
-  @include below(sm) { padding: 48px 24px; }
+  @include below(md) {
+    border-radius: 20px;
+    padding: 40px 24px;
+    align-items: flex-start;
+  }
+  @include below(sm) { 
+    padding: 40px 24px; 
+  }
 }
 
 .heroBadge {
@@ -99,7 +117,10 @@
 
   @include below(xl) { font-size: 42px; }
   @include below(lg) { font-size: 36px; }
-  @include below(sm) { font-size: 28px; }
+  @include below(sm) { 
+    font-size: 28px; 
+    br { display: none; }
+  }
 }
 
 .heroText {
@@ -203,6 +224,10 @@
   color: rgba(255,255,255,0.9);
   line-height: 1.6;
   max-width: 380px;
+
+  @include below(sm) {
+    font-size: 14px;
+  }
 }
 
 

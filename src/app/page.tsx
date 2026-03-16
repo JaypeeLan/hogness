@@ -83,7 +83,7 @@ export default function HomePage() {
             <div className={`${styles.aboutContent} anim`}>
              
               <h2 className={styles.aboutH2}>
-                  About Hogens<br/>Technologies Ltd
+                  About Hogens Technologies Ltd
               </h2>
               <p className={styles.aboutText}>
            Hogens Technologies Ltd is a technology company dedicated to helping individuals, institutions, and organizations unlock the power of technology and data.
@@ -251,12 +251,14 @@ We provide technology training, educational consulting, instructional design, an
           </div>
           <div className={styles.contactCards}>
             {[
-              { bg: '#2563EB', icon: <PhoneIcon2 />, label: 'Call Us',   value: '+234 806 897 4016', sub: 'Speak directly with our team for more information about our programs.' },
-              { bg: '#8B5CF6', icon: <EmailIcon2 />, label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
-              { bg: '#111827', icon: <ChatIcon2 />,  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
-            ].map(({ bg, icon, label, value, sub }, i) => (
+              { bg: '#2563EB', imgSrc: '/call.png',  label: 'Call Us',   value: '+234 806 897 4016', sub: 'Speak directly with our team for more information about our programs.' },
+              { bg: '#8B5CF6', imgSrc: '/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
+              { bg: '#111827', imgSrc: '/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
+            ].map(({ bg, imgSrc, label, value, sub }, i) => (
               <div key={label} className={`${styles.contactCard} anim`} data-delay={String(i + 1)}>
-                <span className={styles.contactCircle} style={{ backgroundColor: bg }}>{icon}</span>
+                <span className={styles.contactCircle} style={{ backgroundColor: bg }}>
+                  <Image src={imgSrc} alt={label} width={28} height={28} />
+                </span>
                 <h3 className={styles.contactLabel}>{label}</h3>
                 <p className={styles.contactSub}>{sub}</p>
                 <p className={styles.contactValue} style={{ color: bg }}>{value}</p>

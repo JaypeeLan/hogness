@@ -20,6 +20,7 @@ export default function Header() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
 
   // Close menu on route change
@@ -117,9 +118,25 @@ export default function Header() {
         <nav className={styles.drawerNav}>
           {NAV.map(({ href, label, isDropdown }, i) => (
             isDropdown ? (
-               <div key="mobile-courses">
-                 <div className={styles.drawerLink} style={{ color: 'rgba(255,255,255,0.5)' }}>Courses</div>
-                 <div className={styles.drawerSubNav}>
+               <div key="mobile-courses" className={styles.drawerDropdown}>
+                 <button 
+                  className={styles.drawerLink} 
+                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                  style={{ width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                 >
+                   Courses
+                   <svg 
+                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" 
+                    style={{ 
+                      transform: mobileDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
+                      transition: 'transform 0.3s ease',
+                      opacity: 0.5
+                    }}
+                   >
+                     <polyline points="6 9 12 15 18 9"></polyline>
+                   </svg>
+                 </button>
+                 <div className={[styles.drawerSubNav, mobileDropdownOpen ? styles.drawerSubNavOpen : ''].filter(Boolean).join(' ')}>
                     {COURSES.map((course) => (
                       <Link
                         key={course.slug}

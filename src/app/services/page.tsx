@@ -58,11 +58,11 @@ export default function ServicesPage() {
                 Our approach combines pedagogical expertise with modern learning technologies.
               </p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Develop and deliver training materials</li>
-                <li><BulletCheck /> Student-centred learning approaches</li>
-                <li><BulletCheck /> Improve instructional materials</li>
-                <li><BulletCheck /> Create interactive learning environments</li>
-                <li><BulletCheck /> Align content to organisational goals</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Develop and deliver training materials</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Student-centred learning approaches</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Improve instructional materials</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Create interactive learning environments</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Align content to organisational goals</li>
               </ul>
               <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
@@ -86,11 +86,11 @@ export default function ServicesPage() {
                 smarter decision-making and improved outcomes.
               </p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Data collection and cleaning</li>
-                <li><BulletCheck /> Predictive analytics models</li>
-                <li><BulletCheck /> Dashboard and report development</li>
-                <li><BulletCheck /> Data strategy consulting</li>
-                <li><BulletCheck /> Training in data tools</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Data collection and cleaning</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Predictive analytics models</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Dashboard and report development</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Data strategy consulting</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Training in data tools</li>
               </ul>
               <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
@@ -114,20 +114,20 @@ export default function ServicesPage() {
                 skills needed to succeed in the modern global digital economy.
               </p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Python Programming</li>
-                <li><BulletCheck /> Data Science</li>
-                <li><BulletCheck /> Data Analysis</li>
-                <li><BulletCheck /> Machine Learning</li>
-                <li><BulletCheck /> Technical Writing</li>
-                <li><BulletCheck /> Digital Literacy</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Python Programming</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Data Science</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Data Analysis</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Machine Learning</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Technical Writing</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Digital Literacy</li>
               </ul>
               <p className={styles.trainingSubtitle}>Empowering individuals with practical technology skills:</p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Understand and build intelligent systems</li>
-                <li><BulletCheck /> Interpret and visualize data effectively</li>
-                <li><BulletCheck /> Build software and automate processes</li>
-                <li><BulletCheck /> Strengthen your digital literacy</li>
-                <li><BulletCheck /> Master data science and analytics</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Understand and build intelligent systems</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Interpret and visualize data effectively</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Build software and automate processes</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Strengthen your digital literacy</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Master data science and analytics</li>
               </ul>
               <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Now
@@ -151,10 +151,10 @@ export default function ServicesPage() {
                 to improve their educational outcomes and technology integration.
               </p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Curriculum development</li>
-                <li><BulletCheck /> EdTech implementation and strategy</li>
-                <li><BulletCheck /> Teacher professional development</li>
-                <li><BulletCheck /> Educational research and data analysis</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Curriculum development</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> EdTech implementation and strategy</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Teacher professional development</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Educational research and data analysis</li>
               </ul>
               <Button as="link" href="/about" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
@@ -178,10 +178,10 @@ export default function ServicesPage() {
                 learning more effective, accessible, and engaging for everyone.
               </p>
               <ul className={styles.serviceBullets}>
-                <li><BulletCheck /> Digital learning platforms</li>
-                <li><BulletCheck /> Interactive learning modules</li>
-                <li><BulletCheck /> Open educational resources</li>
-                <li><BulletCheck /> Educational software development</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Digital learning platforms</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Interactive learning modules</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Open educational resources</li>
+                <li><Image src="/images/icons/bullet-icon.svg" alt="bullet" width={18} height={18} className={styles.bulletIcon} /> Educational software development</li>
               </ul>
               <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
@@ -213,19 +213,19 @@ export default function ServicesPage() {
             </div>
             <div className={styles.whyCard}>
               <div className={styles.whyIcon}>
-                <Image src="/images/icons/instructional-design.svg" alt="Design" width={24} height={24} />
+                <Image src="/images/icons/educational-resources.svg" alt="Design" width={24} height={24} />
               </div>
               <h3>Hands-on, Real-world Projects</h3>
             </div>
             <div className={styles.whyCard}>
               <div className={styles.whyIcon}>
-                <Image src="/images/icons/tech-skills.svg" alt="Tech" width={24} height={24} />
+                <Image src="/images/icons/educational-resources.svg" alt="Tech" width={24} height={24} />
               </div>
               <h3>Low student-teacher ratios</h3>
             </div>
             <div className={styles.whyCard}>
               <div className={styles.whyIcon}>
-                <Image src="/images/icons/educational-consultancy.svg" alt="Consultancy" width={24} height={24} />
+                <Image src="/images/icons/educational-resources.svg" alt="Consultancy" width={24} height={24} />
               </div>
               <h3>Flexible learning options</h3>
             </div>
@@ -246,11 +246,3 @@ function NodeIcon() {
   );
 }
 
-function BulletCheck() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style={{ flexShrink: 0 }}>
-      <circle cx="9" cy="9" r="9" fill="rgba(108,43,217,0.12)"/>
-      <path d="M5.5 9.5l2.5 2.5 4.5-5" stroke="#6C2BD9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
-    </svg>
-  );
-}
