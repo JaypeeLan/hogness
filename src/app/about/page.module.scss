@@ -35,7 +35,7 @@
 }
 
 .heroImgWrap {
-  border-radius: 40px;
+  border-radius: 60px;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0,0,0,0.1);
   height: 100%; 
@@ -62,14 +62,14 @@
   flex-direction: column;
   justify-content: center;
   gap: 30px; // User requested exactly 30px gap
-  border-radius: 40px;
+  border-radius: 60px;
   height: 100%; 
   
   @include below(xl) { padding: 60px 48px; }
   @include below(lg) { 
     padding: 60px 40px; 
     align-items: center;
-    border-radius: 32px;
+    border-radius: 60px;
   }
   @include below(sm) { padding: 48px 24px; }
 }
