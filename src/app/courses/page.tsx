@@ -3,6 +3,7 @@ import Link from 'next/link';
 import CTABanner from '@/components/sections/CTABanner';
 import { COURSES } from '@/lib/data';
 import styles from './page.module.scss';
+import { NodeIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'Courses',
@@ -17,9 +18,7 @@ export default function CoursesPage() {
         <div className="container">
           <div className={`${styles.heroContent} anim`}>
             <span className={styles.heroBadge}>
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                <circle cx="6" cy="6" r="5" fill="#6C2BD9" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
-              </svg>
+              <NodeIcon size={12} strokeWidth={2} />
               Our Courses
             </span>
             <h1 className={styles.heroH1}>

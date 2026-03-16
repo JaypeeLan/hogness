@@ -14,7 +14,8 @@
 
 .heroBg {
   background: #150033;
-  padding-block: 80px;
+  padding-top: 150px;
+  padding-bottom: 80px;
   margin-inline: 200px;
   border-radius: 60px;
   overflow: hidden;
@@ -23,9 +24,11 @@
   @include below(md) {
     margin-inline: 0;
     border-radius: 20px;
-    padding-block: 24px;
+    padding-top: 100px;
+    padding-bottom: 24px;
   }
 }
+
 
 // heroContentWrapper removed
 
@@ -82,6 +85,10 @@
   font-weight: 600;
   color: $white;
   opacity: 0.9;
+
+  @include below(sm) {
+    font-size: 14px;
+  }
 }
 
 .heroDesc {
@@ -193,6 +200,10 @@
   font-weight: 800;
   color: $gray-800;
   margin-bottom: 32px;
+
+  @include below(sm) {
+    font-size: 14px;
+  }
 }
 
 .learnGrid {

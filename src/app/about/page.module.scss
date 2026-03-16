@@ -8,10 +8,11 @@
 // ══ HERO ════════════════════════════════════════════
 .heroOuter {
   margin-top: $header-height;
-  padding-block: 80px;
+  padding-top: 0;
+  padding-bottom: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 24px; }
+  @include below(md) { padding-top: 0; padding-bottom: 24px; }
 }
 
 // HeroBg already handles padding-block: 80px and margins
@@ -69,7 +70,7 @@
 
 .heroContentCard {
   background: #150033;
-  padding: 80px 64px;
+  padding: 150px 64px 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -77,20 +78,21 @@
   border-radius: 60px;
   height: 100%; 
   
-  @include below(xl) { padding: 60px 48px; }
+  @include below(xl) { padding: 150px 48px 60px; }
   @include below(lg) { 
-    padding: 60px 40px; 
+    padding: 150px 40px 60px; 
     border-radius: 60px;
   }
   @include below(md) {
     border-radius: 20px;
-    padding: 40px 24px;
+    padding: 100px 24px 40px;
     align-items: flex-start;
   }
   @include below(sm) { 
-    padding: 40px 24px; 
+    padding: 100px 24px 40px; 
   }
 }
+
 
 .heroBadge {
   display: inline-flex;

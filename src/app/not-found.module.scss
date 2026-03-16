@@ -47,6 +47,10 @@
     line-height: $lh-relaxed;
     position: relative;
     z-index: 1;
+
+    @include below(sm) {
+      font-size: 14px;
+    }
   }
 
   .actions {

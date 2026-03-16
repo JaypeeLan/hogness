@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import Button from '@/components/ui/Button';
 import styles from './Header.module.scss';
 import Image from 'next/image';
+import { ChevronDownIcon } from '@/components/ui/Icons';
 
 import { COURSES } from '@/lib/data';
 
@@ -64,9 +65,11 @@ export default function Header() {
                   <button className={[styles.navLink, pathname.startsWith('/courses') ? styles.navLinkActive : ''].filter(Boolean).join(' ')}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                       Courses 
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }}>
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                      </svg>
+                      <ChevronDownIcon 
+                        size={12} 
+                        strokeWidth={3} 
+                        style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} 
+                      />
                     </span>
                   </button>
                   {dropdownOpen && (
@@ -125,16 +128,15 @@ export default function Header() {
                   style={{ width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
                  >
                    Courses
-                   <svg 
-                    width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" 
+                   <ChevronDownIcon 
+                    size={20} 
+                    strokeWidth={2.5} 
                     style={{ 
                       transform: mobileDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
                       transition: 'transform 0.3s ease',
                       opacity: 0.5
                     }}
-                   >
-                     <polyline points="6 9 12 15 18 9"></polyline>
-                   </svg>
+                   />
                  </button>
                  <div className={[styles.drawerSubNav, mobileDropdownOpen ? styles.drawerSubNavOpen : ''].filter(Boolean).join(' ')}>
                     {COURSES.map((course) => (

@@ -15,7 +15,7 @@
 
 .heroBg {
   background: $purple-900;
-  padding-top: 64px;
+  padding-top: 150px;
   padding-bottom: 280px; 
   margin-top: 0;
   width: 100%;
@@ -26,10 +26,11 @@
 
   @include below(md) {
     border-radius: 20px;
-    padding-top: 24px;
+    padding-top: 100px;
     padding-bottom: 220px; // Gives enough space for the image to overlap
   }
 }
+
 
 // heroContentWrapper removed
 

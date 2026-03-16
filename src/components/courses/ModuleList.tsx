@@ -1,17 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import styles from '@/app/courses/[slug]/page.module.scss';
-
-interface Module {
-  title: string;
-  summary: string;
-  topics: string[];
-}
-
-interface Props {
-  modules: Module[];
-}
+import { ChevronDownIcon, DotIcon } from '@/components/ui/Icons';
 
 export default function ModuleList({ modules }: Props) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -34,7 +23,7 @@ export default function ModuleList({ modules }: Props) {
               <h3 className={styles.moduleTitle}>
                 Module {i + 1}: {module.title}
               </h3>
-              <ChevronDownIcon className={isOpen ? styles.rotate : ''} />
+              <ChevronDownIcon className={isOpen ? styles.rotate : ''} style={{ transition: 'transform 0.3s ease' }} />
             </div>
             
             <div className={`${styles.moduleBody} ${isOpen ? styles.show : ''}`}>
@@ -43,7 +32,7 @@ export default function ModuleList({ modules }: Props) {
                 <ul className={styles.moduleTopics}>
                   {module.topics.map((topic, j) => (
                     <li key={j}>
-                      <DotIcon /> {topic}
+                      <DotIcon color="#008EFF" className={styles.dot} /> {topic}
                     </li>
                   ))}
                 </ul>
@@ -56,29 +45,3 @@ export default function ModuleList({ modules }: Props) {
   );
 }
 
-function ChevronDownIcon({ className }: { className?: string }) {
-  return (
-    <svg 
-      width="20" 
-      height="20" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-      className={className}
-      style={{ transition: 'transform 0.3s ease' }}
-    >
-      <polyline points="6 9 12 15 18 9"/>
-    </svg>
-  );
-}
-
-function DotIcon() {
-  return (
-    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" className={styles.dot} style={{ flexShrink: 0 }}>
-      <circle cx="4" cy="4" r="4" fill="#008EFF"/>
-    </svg>
-  );
-}

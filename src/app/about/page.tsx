@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CTABanner from '@/components/sections/CTABanner';
 import styles from './page.module.scss';
+import { NodeIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
   title: 'About | Hogens Technologies Ltd',
@@ -22,7 +23,7 @@ export default function AboutPage() {
             </div>
             <div className={`${styles.heroContentCard} anim`}>
               <div className={styles.heroBadge}>
-                <NodeIcon />
+                <NodeIcon size={12} strokeWidth={2} />
                 About Hogens Technologies Ltd
               </div>
               <h1 className={styles.heroH1}>
@@ -161,18 +162,3 @@ We believe that when people understand technology, they can use it to create opp
   );
 }
 
-function NodeIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#6C2BD9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-    </svg>
-  );
-}
-
-function PhoneIconSm() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9a19.79 19.79 0 01-3.07-8.67A2 2 0 012 .18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92v2z"/><path d="M14.05 2a9 9 0 018 7.94"/><path d="M14.05 6A5 5 0 0118 10"/></svg>;
-}
-
-function EmailIconSm() {
-  return <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>;
-}

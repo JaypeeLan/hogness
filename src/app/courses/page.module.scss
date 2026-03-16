@@ -3,9 +3,16 @@
 
 .hero {
   background: $purple-900;
-  padding-top: calc(#{$header-height} + 72px);
+  margin-top: $header-height;
+  padding-top: 150px;
   padding-bottom: 80px;
+
+  @include below(md) {
+    padding-top: 100px;
+    padding-bottom: 48px;
+  }
 }
+
 
 .heroContent {
   display: flex;

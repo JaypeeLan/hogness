@@ -6,6 +6,7 @@ import Button from '@/components/ui/Button';
 import CTABanner from '@/components/sections/CTABanner';
 import ModuleList from '@/components/courses/ModuleList';
 import styles from './page.module.scss';
+import { NodeIcon, BookIcon, DataAnalysisIcon, PaletteIcon, ChartIcon, TrendingIcon } from '@/components/ui/Icons';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -43,7 +44,7 @@ export default async function CoursePage({ params }: Props) {
             <div className={styles.heroGrid}>
               <div className={`${styles.heroContent} anim`}>
                 <div className={styles.heroBadge}>
-                  <NodeIcon />
+                  <NodeIcon size={12} strokeWidth={2} style={{ color: '#008EFF' }} />
                   <span>{course.slug.replace('-', ' ').toUpperCase()}</span>
                 </div>
                 <h1 className={styles.heroTitle}>{course.pageTitle}</h1>
@@ -112,6 +113,8 @@ export default async function CoursePage({ params }: Props) {
         </div>
       </section>
 
+      {/* ... rest of the file ... */}
+
       {/* ══ MODULES ═════════════════════════════════════════ */}
       <section className={styles.modulesSection}>
         <div className="container">
@@ -178,36 +181,14 @@ export default async function CoursePage({ params }: Props) {
   );
 }
 
-function NodeIcon() {
-  return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#008EFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
-    </svg>
-  );
-}
-
-
-function BookIcon() {
-  return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
-      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
-    </svg>
-  );
-}
-
 function LearnIcon({ index }: { index: number }) {
   const icons = [
-    // Book
-    <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
-    // Database
-    <svg key="2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>,
-    // Palette / Creative
-    <svg key="3" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 2a10 10 0 0 0-10 10c0 5.52 4.48 10 10 10a10 10 0 0 0 10-10c0-1.66-1.34-3-3-3h-1c-1.66 0-3-1.34-3-3V2z"/><path d="M7 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M11 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M16 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M12 18a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>,
-    // Chart
-    <svg key="4" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>,
-    // Trending
-    <svg key="5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+    <BookIcon key="1" size={20} />,
+    <DataAnalysisIcon key="2" size={20} />,
+    <PaletteIcon key="3" size={20} />,
+    <ChartIcon key="4" size={20} />,
+    <TrendingIcon key="5" size={20} />
   ];
   return icons[index % icons.length];
 }
+
