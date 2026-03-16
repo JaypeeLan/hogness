@@ -231,7 +231,7 @@ We provide technology training, educational consulting, instructional design, an
                       <path d="M9 3v12M3 9h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                     <svg className={styles.faqMinus} width="18" height="18" viewBox="0 0 18 18" fill="none">
-                      <path d="M3 9h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                      <path d="M4.5 4.5L13.5 13.5M13.5 4.5L4.5 13.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
                     </svg>
                   </span>
                 </summary>
@@ -251,13 +251,13 @@ We provide technology training, educational consulting, instructional design, an
           </div>
           <div className={styles.contactCards}>
             {[
-              { bg: '#2563EB', imgSrc: '/call.png',  label: 'Call Us',   value: '+234 806 897 4016', sub: 'Speak directly with our team for more information about our programs.' },
-              { bg: '#8B5CF6', imgSrc: '/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
-              { bg: '#111827', imgSrc: '/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
+              { bg: '#2563EB', imgSrc: '/images/contact/call.png',  label: 'Call Us',   value: '+234 806 897 4016', sub: 'Speak directly with our team for more information about our programs.' },
+              { bg: '#8B5CF6', imgSrc: '/images/contact/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
+              { bg: '#111827', imgSrc: '/images/contact/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
             ].map(({ bg, imgSrc, label, value, sub }, i) => (
               <div key={label} className={`${styles.contactCard} anim`} data-delay={String(i + 1)}>
-                <span className={styles.contactCircle} style={{ backgroundColor: bg }}>
-                  <Image src={imgSrc} alt={label} width={28} height={28} />
+                <span className={styles.contactImageWrap}>
+                  <Image src={imgSrc} alt={label} width={80} height={80} className={styles.contactImage} />
                 </span>
                 <h3 className={styles.contactLabel}>{label}</h3>
                 <p className={styles.contactSub}>{sub}</p>

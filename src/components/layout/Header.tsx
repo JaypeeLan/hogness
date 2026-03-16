@@ -48,7 +48,7 @@ export default function Header() {
         <div className={styles.inner}>
           {/* Logo */}
           <Link href="/" className={styles.logo} aria-label="Hogens Technologies Ltd">
-          <Image src="/images/brand/logo.png" alt="Hogens Technologies Ltd" width={205} height={47} />
+          <Image src="/images/brand/logo.png" alt="Hogens Technologies Ltd" width={205} height={47} className={styles.logoImg} />
           </Link>
 
           {/* Desktop nav */}

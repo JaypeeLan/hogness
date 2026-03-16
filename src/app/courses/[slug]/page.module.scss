@@ -23,7 +23,7 @@
   @include below(md) {
     margin-inline: 0;
     border-radius: 20px;
-    padding-block: 48px;
+    padding-block: 24px;
   }
 }
 
@@ -139,7 +139,7 @@
 .overviewSection {
   padding-block: 120px 80px;
 
-  @include below(md) { padding-block: 80px 40px; }
+  @include below(md) { padding-block: 60px 40px; }
 }
 
 .overviewGrid {
@@ -258,6 +258,10 @@
 .modulesSection {
   padding-block: 80px;
   background: $gray-50;
+
+  @include below(md) {
+    padding-block: 52px;
+  }
 }
 
 .sectionTitleCentered {
@@ -348,6 +352,10 @@
 // ══ TOOLS & SKILLS ══════════════════════════════════
 .toolsSection {
   padding-block: 100px;
+
+  @include below(md) {
+    padding-block: 52px;
+  }
 }
 
 .toolsGrid {
@@ -412,6 +420,10 @@
   background: $white;
   text-align: center;
   color: $gray-800;
+
+  @include below(md) {
+    padding-block: 52px;
+  }
 
   .sectionTitleCentered { color: $gray-800; margin-bottom: 16px; }
 }

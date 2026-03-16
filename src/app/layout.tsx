@@ -3,6 +3,7 @@ import NextTopLoader from 'nextjs-toploader';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import PageLoader from '@/components/ui/PageLoader';
+import SplashScreen from '@/components/ui/SplashScreen';
 import PageTransition from '@/components/ui/PageTransition';
 import AnimInit from '@/components/ui/AnimInit';
 import '@/styles/globals.scss';
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <SplashScreen />
         <NextTopLoader color="#6600C9" showSpinner={false} />
         <PageLoader />
         <Header />

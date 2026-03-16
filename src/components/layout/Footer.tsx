@@ -33,7 +33,6 @@ export default function Footer() {
                   width={160} 
                   height={45} 
                   style={{ objectFit: 'contain' }}
-                  priority
                 />
               </Link>
               <p className={styles.brandDesc}>

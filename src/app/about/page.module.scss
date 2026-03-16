@@ -11,7 +11,7 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 48px; }
+  @include below(md) { padding-block: 24px; }
 }
 
 // HeroBg already handles padding-block: 80px and margins
@@ -178,7 +178,7 @@
   background: $purple-solid;
   padding-block: 80px;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .mvGrid {
@@ -236,7 +236,7 @@
   padding-block: 100px;
   background: $white;
 
-  @include below(md) { padding-block: 72px; }
+  @include below(md) { padding-block: 52px; }
 }
 
 .contactHeader {

@@ -14,6 +14,10 @@
 
   // Transparent on hero (default)
   background: $white;
+
+  @include below(sm) {
+    height: 60px;
+  }
 }
 
 .scrolled {
@@ -36,10 +40,23 @@
 
 // ── Logo ─────────────────────────────────────────
 .logo {
-
   transition: opacity $t-fast;
+  display: flex;
+  align-items: center;
 
   &:hover { opacity: 0.85; }
+}
+
+.logoImg {
+  width: auto;
+  height: auto;
+  max-width: 205px;
+  max-height: 47px;
+
+  @include below(sm) {
+    width: 130px;
+    height: 30px;
+  }
 }
 
 
@@ -195,6 +212,10 @@
   top: $header-height;
   right: 0;
   bottom: 0;
+
+  @include below(sm) {
+    top: 60px;
+  }
   width: 100%;
   max-width: 320px;
   background: $purple-900;

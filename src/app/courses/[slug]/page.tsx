@@ -64,7 +64,6 @@ export default async function CoursePage({ params }: Props) {
                   width={680} 
                   height={750} 
                   className={styles.heroImg}
-                  priority
                 />
               </div>
             </div>

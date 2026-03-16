@@ -29,7 +29,7 @@
   @include below(md) {
     margin-top: 0;
     border-radius: 30px;
-    padding-top: 48px;
+    padding-top: 24px;
     padding-bottom: 120px;
   }
 }
@@ -138,8 +138,8 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
-  @include below(sm) { padding-block: 48px; }
+  @include below(md) { padding-block: 44px; }
+  @include below(sm) { padding-block: 28px; }
 }
 
 .trustHeader {
@@ -226,7 +226,7 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .aboutGrid {
@@ -251,13 +251,14 @@
   @include below(lg) {
     max-width: 600px;
     margin-inline: auto;
-    height: 480px;
+    height: auto;
+    aspect-ratio: 4 / 5;
   }
   @include below(md) {
     border-radius: 20px;
   }
   @include below(sm) { 
-    height: 380px;
+    height: auto;
     max-width: 100%;
     margin-inline: 0; // Ensure it spans to container edge
   }
@@ -268,6 +269,11 @@
   height: 100%;
   object-fit: cover;
   display: block;
+
+  @include below(lg) {
+    height: auto;
+    object-position: center;
+  }
 }
 
 .aboutContent {
@@ -399,8 +405,8 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
-  @include below(sm) { padding-block: 48px; }
+  @include below(md) { padding-block: 44px; }
+  @include below(sm) { padding-block: 28px; }
 }
 
 .servicesGrid {
@@ -460,7 +466,7 @@
   padding-block: 96px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .lbdGrid {
@@ -531,7 +537,7 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .coursesGrid {
@@ -624,7 +630,7 @@
   padding-block: 96px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .processGrid {
@@ -698,7 +704,7 @@
   padding-block: 80px;
   background: $white;
 
-  @include below(md) { padding-block: 64px; }
+  @include below(md) { padding-block: 44px; }
 }
 
 .faqList {
@@ -776,7 +782,7 @@
   padding-block: 80px 120px;
   background: $white;
 
-  @include below(md) { padding-block: 64px 80px; }
+  @include below(md) { padding-block: 44px 60px; }
 }
 
 .contactCards {
@@ -801,29 +807,22 @@
   border: none;
 }
 
-.contactCircle {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+.contactImageWrap {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   margin-bottom: 8px;
+}
+
+.contactImage {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
 
   @include below(md) {
     width: 64px;
     height: 64px;
-  }
-  
-  svg {
-    width: 28px;
-    height: 28px;
-
-    @include below(md) {
-      width: 24px;
-      height: 24px;
-    }
   }
 }
 
