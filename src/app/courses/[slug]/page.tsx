@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { COURSES, getCourse } from '@/lib/data';
 import Button from '@/components/ui/Button';
+import EnrollButton from '@/components/ui/EnrollButton';
 import CTABanner from '@/components/sections/CTABanner';
 import ModuleList from '@/components/courses/ModuleList';
 import styles from './page.module.scss';
@@ -50,9 +51,9 @@ export default async function CoursePage({ params }: Props) {
                 <h1 className={styles.heroTitle}>{course.pageTitle}</h1>
                 <p className={styles.heroDesc}>{course.subDescription}</p>
                 <div className={styles.heroBtnGroup}>
-                  <Button as="link" href="/about#contact" variant="primary" size="lg">
+                  <EnrollButton variant="primary" size="lg">
                     Enroll Now &rarr;
-                  </Button>
+                  </EnrollButton>
                   <Button as="link" href="#overview" variant="white" size="lg" className={styles.whiteBtn}>
                     Download Course Outline
                   </Button>
@@ -165,9 +166,9 @@ export default async function CoursePage({ params }: Props) {
             ))}
           </div>
           <div className={styles.careerAction}>
-            <Button as="link" href="/about#contact" variant="primary" size="md" style={{ paddingInline: '40px' }}>
+            <EnrollButton variant="primary" size="md" style={{ paddingInline: '40px' }}>
               Enroll Now —&gt;
-            </Button>
+            </EnrollButton>
           </div>
         </div>
       </section>

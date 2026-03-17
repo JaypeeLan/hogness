@@ -1,0 +1,242 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.overlay.fadeOut {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease forwards;
+  
+  // Custom scrollbar
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+.modal.slideDown {
+  animation: slideDownOut 0.3s ease forwards;
+}
+
+.header {
+  background-color: #1a0b2e; /* dark purple */
+  color: white;
+  padding: 40px 40px 30px;
+  position: relative;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  
+  .closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.2s;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  .brandName {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    margin-bottom: 12px;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+    color: #ffffff;
+  }
+  
+  .subtitle {
+    font-size: 14px;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.5;
+  }
+}
+
+.body {
+  padding: 30px 40px 40px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    
+    span {
+      color: #6600C9;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    width: 100%;
+    background-color: #f5f8f8;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #333;
+    font-family: inherit;
+    transition: all 0.2s;
+    
+    &::placeholder {
+      color: #999;
+    }
+    
+    &:focus {
+      outline: none;
+      border-color: #6600C9;
+      background-color: #fff;
+    }
+  }
+  
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    
+    &:invalid {
+      color: #999;
+    }
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+}
+
+.phoneInputWrap {
+  display: flex;
+  gap: 8px;
+  
+  .phonePrefix {
+    background-color: #f5f8f8;
+    border-radius: 8px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    flex-shrink: 0;
+  }
+  
+  input {
+    flex-grow: 1;
+  }
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+  input[type="checkbox"] {
+    margin-top: 3px;
+    width: 16px;
+    height: 16px;
+    accent-color: #6600C9;
+    cursor: pointer;
+  }
+  
+  label {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.5;
+    cursor: pointer;
+  }
+}
+
+.footer {
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideDownOut {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(20px) scale(0.98); }
+}
+
+@media (max-width: 640px) {
+  .header, .body {
+    padding: 24px;
+  }
+  
+  .header .title {
+    font-size: 24px;
+  }
+}

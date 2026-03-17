@@ -7,6 +7,7 @@ import Button from '@/components/ui/Button';
 import styles from './Header.module.scss';
 import Image from 'next/image';
 import { ChevronDownIcon } from '@/components/ui/Icons';
+import { useServiceModal } from '@/contexts/ServiceModalContext';
 
 import { COURSES } from '@/lib/data';
 
@@ -23,6 +24,7 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const { openModal } = useServiceModal();
 
   // Close menu on route change
   useEffect(() => setMenuOpen(false), [pathname]);
@@ -96,7 +98,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className={styles.cta}>
-            <Button as="link" href="/courses" variant="primary" size="md" style={{ height: '44px', padding: '0 24px', fontSize: '13px', borderRadius: '8px' }}>
+            <Button onClick={openModal} variant="primary" size="md" style={{ height: '44px', padding: '0 24px', fontSize: '13px', borderRadius: '8px' }}>
               Get Started
             </Button>
           </div>
@@ -164,7 +166,7 @@ export default function Header() {
             )
           ))}
           <div className={styles.drawerCta}>
-            <Button as="link" href="/courses" variant="primary" size="lg">
+            <Button onClick={() => { setMenuOpen(false); openModal(); }} variant="primary" size="lg">
               Get Started
             </Button>
           </div>

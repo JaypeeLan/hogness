@@ -6,6 +6,9 @@ import PageLoader from '@/components/ui/PageLoader';
 import SplashScreen from '@/components/ui/SplashScreen';
 import PageTransition from '@/components/ui/PageTransition';
 import AnimInit from '@/components/ui/AnimInit';
+import { ServiceModalProvider } from '@/contexts/ServiceModalContext';
+import ServiceRequestModal from '@/components/ui/ServiceRequestModal';
+import WhatsAppWidget from '@/components/ui/WhatsAppWidget';
 import '@/styles/globals.scss';
 
 export const metadata: Metadata = {
@@ -69,15 +72,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <SplashScreen />
-        <NextTopLoader color="#6600C9" showSpinner={false} />
-        <PageLoader />
-        <Header />
-        <PageTransition>
-          <main>{children}</main>
-        </PageTransition>
-        <Footer />
-        <AnimInit />
+        <ServiceModalProvider>
+          <SplashScreen />
+          <NextTopLoader color="#6600C9" showSpinner={false} />
+          <PageLoader />
+          <Header />
+          <PageTransition>
+            <main>{children}</main>
+          </PageTransition>
+          <Footer />
+          <AnimInit />
+          <ServiceRequestModal />
+          <WhatsAppWidget />
+        </ServiceModalProvider>
       </body>
     </html>
   );
