@@ -267,7 +267,7 @@ We provide technology training, educational consulting, instructional design, an
           </div>
           <div className={styles.contactCards}>
             {[
-              { bg: '#2563EB', imgSrc: '/images/contact/call.png',  label: 'Call Us',   value: '+234 806 897 4016', sub: 'Speak directly with our team for more information about our programs.' },
+              { bg: '#2563EB', imgSrc: '/images/contact/call.png',  label: 'Call Us',   value: '+234 806 897 4616', sub: 'Speak directly with our team for more information about our programs.' },
               { bg: '#8B5CF6', imgSrc: '/images/contact/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
               { bg: '#111827', imgSrc: '/images/contact/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
             ].map(({ bg, imgSrc, label, value, sub }, i) => (

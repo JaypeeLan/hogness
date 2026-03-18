@@ -5,7 +5,7 @@ import Image from 'next/image';
 import styles from './WhatsAppWidget.module.scss';
 
 export default function WhatsAppWidget() {
-  const phoneNumber = '+2348000000000'; // Replace with actual number if provided
+  const phoneNumber = '+2348068974616'; // Replace with actual number if provided
   const message = 'Hello Hogens Technologies, I would like to inquire about your services.';
   const whatsappUrl = `https://wa.me/${phoneNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
 
