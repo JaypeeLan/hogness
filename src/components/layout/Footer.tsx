@@ -10,7 +10,7 @@ const COURSES_LINKS = [
   { href: '/courses/digital-literacy', label: 'Digital Literacy'        },
   { href: '/courses/coding-for-kids',  label: 'Coding for Kids'         },
   { href: '/courses/python',           label: 'Python'                  },
-  { href: '/courses/ai',               label: 'Artificial Intelligence' },
+  { href: '/courses/ai-ml',               label: 'Artificial Intelligence' },
 ];
 
 const COMPANY_LINKS = [

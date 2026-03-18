@@ -57,7 +57,7 @@ export default function ServicesPage() {
       {/* ══ SERVICE SECTIONS ════════════════════════════════ */}
       
       {/* 1. Instructional Design */}
-      <section className={styles.serviceSection}>
+      <section id="instructional-design" className={styles.serviceSection}>
         <div className="container">
           <div className={styles.serviceGrid}>
             <div className={`${styles.serviceContent} anim`}>
@@ -85,7 +85,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 2. Data Analysis Solutions */}
-      <section className={styles.serviceSectionAlt}>
+      <section id="data-analysis" className={styles.serviceSectionAlt}>
         <div className="container">
           <div className={`${styles.serviceGrid} ${styles.reverse}`}>
             <div className={`${styles.serviceContent} anim`}>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 3. Tech Skills Training */}
-      <section className={styles.serviceSection}>
+      <section id="tech-skills" className={styles.serviceSection}>
         <div className="container">
           <div className={styles.serviceGrid}>
             <div className={`${styles.serviceContent} anim`}>
@@ -150,7 +150,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 4. Educational Consultancy */}
-      <section className={styles.serviceSectionAlt}>
+      <section id="educational-consultancy" className={styles.serviceSectionAlt}>
         <div className="container">
           <div className={`${styles.serviceGrid} ${styles.reverse}`}>
             <div className={`${styles.serviceContent} anim`}>
@@ -177,7 +177,7 @@ export default function ServicesPage() {
       </section>
 
       {/* 5. Educational Resources and Technology Tools */}
-      <section className={styles.serviceSection}>
+      <section id="educational-resources" className={styles.serviceSection}>
         <div className="container">
           <div className={styles.serviceGrid}>
             <div className={`${styles.serviceContent} anim`}>

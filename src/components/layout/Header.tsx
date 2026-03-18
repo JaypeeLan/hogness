@@ -9,20 +9,20 @@ import Image from 'next/image';
 import { ChevronDownIcon } from '@/components/ui/Icons';
 import { useServiceModal } from '@/contexts/ServiceModalContext';
 
-import { COURSES } from '@/lib/data';
+import { COURSES, SERVICES } from '@/lib/data';
 
 const NAV = [
   { href: '/',         label: 'Home'     },
   { href: '/about',    label: 'About'    },
-  { href: '/services', label: 'Services' },
-  { href: '#',         label: 'Courses', isDropdown: true },
+  { href: '/services', label: 'Services', isDropdown: true, type: 'services', items: SERVICES },
+  { href: '#',         label: 'Courses', isDropdown: true, type: 'courses', items: COURSES },
 ];
 
 export default function Header() {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<string | null>(null);
   const pathname = usePathname();
   const { openModal } = useServiceModal();
 
@@ -56,29 +56,37 @@ export default function Header() {
 
           {/* Desktop nav */}
           <nav className={styles.nav} aria-label="Main navigation">
-            {NAV.map(({ href, label, isDropdown }) => (
+            {NAV.map(({ href, label, isDropdown, type, items }) => (
               isDropdown ? (
                 <div 
-                  key="courses-dropdown"
+                  key={`${type}-dropdown`}
                   className={styles.dropdownContainer}
-                  onMouseEnter={() => setDropdownOpen(true)}
-                  onMouseLeave={() => setDropdownOpen(false)}
+                  onMouseEnter={() => setActiveDropdown(type || null)}
+                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button className={[styles.navLink, pathname.startsWith('/courses') ? styles.navLinkActive : ''].filter(Boolean).join(' ')}>
+                  <Link 
+                    href={href} 
+                    className={[styles.navLink, pathname.startsWith(href !== '#' ? href : `/${type}`) ? styles.navLinkActive : ''].filter(Boolean).join(' ')}
+                  >
                     <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                      Courses 
+                      {label} 
                       <ChevronDownIcon 
                         size={12} 
                         strokeWidth={3} 
-                        style={{ transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} 
+                        style={{ transform: activeDropdown === type ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.2s' }} 
                       />
                     </span>
-                  </button>
-                  {dropdownOpen && (
+                  </Link>
+                  {activeDropdown === type && (
                     <div className={styles.dropdownMenu}>
-                      {COURSES.map((course) => (
-                        <Link key={course.slug} href={`/courses/${course.slug}`} className={styles.dropdownItem} onClick={() => setDropdownOpen(false)}>
-                          {course.title}
+                      {items?.map((item: any) => (
+                        <Link 
+                          key={item.slug} 
+                          href={type === 'services' ? `/services#${item.slug}` : `/courses/${item.slug}`} 
+                          className={styles.dropdownItem} 
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          {item.title}
                         </Link>
                       ))}
                     </div>
@@ -121,34 +129,34 @@ export default function Header() {
         aria-hidden={!menuOpen}
       >
         <nav className={styles.drawerNav}>
-          {NAV.map(({ href, label, isDropdown }, i) => (
+          {NAV.map(({ href, label, isDropdown, type, items }, i) => (
             isDropdown ? (
-               <div key="mobile-courses" className={styles.drawerDropdown}>
+               <div key={`mobile-${type}`} className={styles.drawerDropdown}>
                  <button 
                   className={styles.drawerLink} 
-                  onClick={() => setMobileDropdownOpen(!mobileDropdownOpen)}
+                  onClick={() => setActiveMobileDropdown(activeMobileDropdown === type ? null : (type || null))}
                   style={{ width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
                  >
-                   Courses
+                   {label}
                    <ChevronDownIcon 
                     size={20} 
                     strokeWidth={2.5} 
                     style={{ 
-                      transform: mobileDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)', 
+                      transform: activeMobileDropdown === type ? 'rotate(180deg)' : 'rotate(0deg)', 
                       transition: 'transform 0.3s ease',
                       opacity: 0.5
                     }}
                    />
                  </button>
-                 <div className={[styles.drawerSubNav, mobileDropdownOpen ? styles.drawerSubNavOpen : ''].filter(Boolean).join(' ')}>
-                    {COURSES.map((course) => (
+                 <div className={[styles.drawerSubNav, activeMobileDropdown === type ? styles.drawerSubNavOpen : ''].filter(Boolean).join(' ')}>
+                    {items?.map((item: any) => (
                       <Link
-                        key={course.slug}
-                        href={`/courses/${course.slug}`}
+                        key={item.slug}
+                        href={type === 'services' ? `/services#${item.slug}` : `/courses/${item.slug}`}
                         className={styles.drawerSubLink}
                         onClick={() => setMenuOpen(false)}
                       >
-                        {course.title}
+                        {item.title}
                       </Link>
                     ))}
                  </div>

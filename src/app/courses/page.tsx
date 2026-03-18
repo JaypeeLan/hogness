@@ -49,7 +49,7 @@ export default function CoursesPage() {
                 className={[styles.card, i === 2 ? styles.cardFeatured : ''].filter(Boolean).join(' ') + ' anim'}
                 data-delay={String((i % 3) + 1)}
               >
-                <span className={styles.cardIcon}>{course.icon}</span>
+                <img className={styles.cardIcon} src={course.icon} alt={course.title} width={40} height={40} />
                 <div className={styles.cardBody}>
                   <h3 className={styles.cardTitle}>{course.title}</h3>
                   <p className={styles.cardDesc}>{course.description}</p>

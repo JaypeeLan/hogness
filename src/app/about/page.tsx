@@ -102,16 +102,16 @@ We believe that when people understand technology, they can use it to create opp
               <ul className={styles.contactList}>
                 <li>
                   <div className={styles.ciIconBox}>
-                    <Image src="/call.png" alt="Call" width={20} height={20} />
+                    <Image src="/images/contact/phone.png" alt="Call" width={24} height={24} />
                   </div>
                   <div className={styles.ciText}>
                     <span className={styles.ciLabel}>Phone:</span>
-                    <span className={styles.ciValue}>+234 809 027 4016</span>
+                    <span className={styles.ciValue}>+234 806 897 4616</span>
                   </div>
                 </li>
                 <li>
                   <div className={styles.ciIconBox}>
-                    <Image src="/email.png" alt="Email" width={20} height={20} />
+                    <Image src="/images/contact/mail.png" alt="Email" width={24} height={24} />
                   </div>
                   <div className={styles.ciText}>
                     <span className={styles.ciLabel}>Email:</span>
