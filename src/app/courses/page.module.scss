@@ -117,26 +117,20 @@
   flex-direction: column;
   gap: 12px;
   text-decoration: none;
-  transition: box-shadow $t-base, transform $t-base, border-color $t-base;
+  transition: box-shadow $t-base, transform $t-base, border-color $t-base, background $t-base;
 
   &:hover {
     box-shadow: $shadow-lg;
     transform: translateY(-3px);
-    border-color: rgba(108,43,217,0.2);
+    border-color: transparent;
+    background: $purple-700;
+
+    .cardTitle   { color: $white; }
+    .cardDesc    { color: rgba(255,255,255,0.75); }
+    .cardDuration,
+    .cardLevel   { color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.12); border-color: transparent; }
+    .cardCta     { color: rgba(255,255,255,0.85); border-top-color: rgba(255,255,255,0.15); }
   }
-}
-
-.cardFeatured {
-  background: $purple-700;
-  border-color: transparent;
-
-  .cardTitle   { color: $white; }
-  .cardDesc    { color: rgba(255,255,255,0.75); }
-  .cardDuration,
-  .cardLevel   { color: rgba(255,255,255,0.65); background: rgba(255,255,255,0.12); border-color: transparent; }
-  .cardCta     { color: rgba(255,255,255,0.85); border-top-color: rgba(255,255,255,0.15); }
-
-  &:hover { background: $purple-800; transform: translateY(-3px); }
 }
 
 .cardIcon {

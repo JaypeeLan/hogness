@@ -46,7 +46,7 @@ export default function CoursesPage() {
               <Link
                 key={course.slug}
                 href={`/courses/${course.slug}`}
-                className={[styles.card, i === 2 ? styles.cardFeatured : ''].filter(Boolean).join(' ') + ' anim'}
+                className={`${styles.card} anim`}
                 data-delay={String((i % 3) + 1)}
               >
                 <img className={styles.cardIcon} src={course.icon} alt={course.title} width={40} height={40} />

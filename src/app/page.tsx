@@ -191,7 +191,7 @@ We provide technology training, educational consulting, instructional design, an
               <Link
                 key={course.slug}
                 href={`/courses/${course.slug}`}
-                className={[styles.courseCard, i === 2 ? styles.courseCardFeatured : ''].filter(Boolean).join(' ') + ' anim'}
+                className={`${styles.courseCard} anim`}
                 data-delay={String((i % 3) + 1)}
               >
                 <div className={styles.courseIconWrap}>

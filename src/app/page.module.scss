@@ -437,11 +437,15 @@
   gap: 16px;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-  transition: box-shadow $t-base, transform $t-base;
+  transition: box-shadow $t-base, transform $t-base, background $t-base;
 
   &:hover {
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     transform: translateY(-4px);
+    background: #6D28D9;
+
+    .serviceCardTitle { color: $white; }
+    .serviceCardDesc  { color: rgba(255,255,255,0.85); }
   }
 }
 
@@ -581,24 +585,21 @@
   flex-direction: column;
   gap: 16px;
   text-decoration: none;
-  transition: transform $t-base;
+  transition: transform $t-base, background $t-base;
 
   @include below(sm) {
     min-width: 280px;
     scroll-snap-align: center;
   }
 
-  &:hover { transform: translateY(-4px); }
-}
+  &:hover {
+    transform: translateY(-4px);
+    background: #6D28D9;
 
-.courseCardFeatured {
-  background: #6D28D9;
-
-  .courseCardTitle { color: $white; }
-  .courseCardDesc  { color: rgba(255,255,255,0.85); }
-  .courseCardCta   { color: $white; }
-
-  &:hover { background: #5B22C0; }
+    .courseCardTitle { color: $white; }
+    .courseCardDesc  { color: rgba(255,255,255,0.85); }
+    .courseCardCta   { color: $white; }
+  }
 }
 
 .courseIconWrap {
