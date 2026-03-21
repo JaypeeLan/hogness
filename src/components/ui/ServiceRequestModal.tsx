@@ -8,6 +8,18 @@ import Button from './Button';
 export default function ServiceRequestModal() {
   const { isOpen, closeModal } = useServiceModal();
   const [isClosing, setIsClosing] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    organization: '',
+    service: '',
+    orgType: '',
+    timeline: '',
+    description: '',
+    consent: false,
+  });
 
   useEffect(() => {
     if (isOpen) {
@@ -28,7 +40,57 @@ export default function ServiceRequestModal() {
     setTimeout(() => {
       closeModal();
       setIsClosing(false);
+      // Reset form on close
+      setFormData({
+        fullName: '',
+        email: '',
+        phone: '',
+        organization: '',
+        service: '',
+        orgType: '',
+        timeline: '',
+        description: '',
+        consent: false,
+      });
     }, 300); // match animation duration
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value, type } = e.target;
+    if (type === 'checkbox') {
+      const checked = (e.target as HTMLInputElement).checked;
+      setFormData((prev) => ({ ...prev, [id]: checked }));
+    } else {
+      setFormData((prev) => ({ ...prev, [id]: value }));
+    }
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert('Service Request Submitted Successfully!');
+        handleClose();
+      } else {
+        const result = await response.json();
+        alert(`Failed to submit request: ${result.message || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('An error occurred while submitting the request. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -52,31 +114,64 @@ export default function ServiceRequestModal() {
         </div>
 
         <div className={styles.body}>
-          <form className={styles.form} onSubmit={(e) => { e.preventDefault(); /* Handle submit */ alert('Service Request Submitted!'); handleClose(); }}>
+          <form className={styles.form} onSubmit={handleSubmit}>
             
             <div className={styles.formGroup}>
               <label htmlFor="fullName">Full Name <span>*</span></label>
-              <input type="text" id="fullName" placeholder="Input text" required />
+              <input 
+                type="text" 
+                id="fullName" 
+                placeholder="Enter Full Name" 
+                required 
+                value={formData.fullName}
+                onChange={handleChange}
+              />
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="email">Email Address <span>*</span></label>
-              <input type="email" id="email" placeholder="Input text" required />
+              <input 
+                type="email" 
+                id="email" 
+                placeholder="Enter Email Address" 
+                required 
+                value={formData.email}
+                onChange={handleChange}
+              />
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="phone">Phone Number <span>*</span></label>
-              <input type="tel" id="phone" placeholder="+234 800 000 0000" required />
+              <input 
+                type="tel" 
+                id="phone" 
+                placeholder="+234 800 000 0000" 
+                required 
+                value={formData.phone}
+                onChange={handleChange}
+              />
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="organization">Organization / Institution Name <span>*</span></label>
-              <input type="text" id="organization" placeholder="Enter Organization / Institution Name" required />
+              <input 
+                type="text" 
+                id="organization" 
+                placeholder="Enter Organization / Institution Name" 
+                required 
+                value={formData.organization}
+                onChange={handleChange}
+              />
             </div>
 
             <div className={styles.formGroup}>
               <label htmlFor="service">Service Interested In <span>*</span></label>
-              <select id="service" required defaultValue="">
+              <select 
+                id="service" 
+                required 
+                value={formData.service}
+                onChange={handleChange}
+              >
                 <option value="" disabled>Select a service...</option>
                 <option value="Data Analysis Solutions">Data Analysis Solutions</option>
                 <option value="Instructional Design">Instructional Design</option>
@@ -88,7 +183,12 @@ export default function ServiceRequestModal() {
 
             <div className={styles.formGroup}>
               <label htmlFor="orgType">Type of Organization <span>*</span></label>
-              <select id="orgType" required defaultValue="">
+              <select 
+                id="orgType" 
+                required 
+                value={formData.orgType}
+                onChange={handleChange}
+              >
                 <option value="" disabled>Select organization type...</option>
                 <option value="Business / Company">Business / Company</option>
                 <option value="School / Educational Institution">School / Educational Institution</option>
@@ -100,7 +200,11 @@ export default function ServiceRequestModal() {
 
             <div className={styles.formGroup}>
               <label htmlFor="timeline">When do you need this service?</label>
-              <select id="timeline" defaultValue="">
+              <select 
+                id="timeline" 
+                value={formData.timeline}
+                onChange={handleChange}
+              >
                 <option value="" disabled>Select a timeline...</option>
                 <option value="As soon as possible">As soon as possible</option>
                 <option value="Within 1 month">Within 1 month</option>
@@ -111,17 +215,29 @@ export default function ServiceRequestModal() {
 
             <div className={styles.formGroup}>
               <label htmlFor="description">Project or Service Description</label>
-              <textarea id="description" placeholder="Input text" rows={4}></textarea>
+              <textarea 
+                id="description" 
+                placeholder="Tell us about your project" 
+                rows={4}
+                value={formData.description}
+                onChange={handleChange}
+              ></textarea>
             </div>
 
             <div className={styles.checkboxGroup}>
-              <input type="checkbox" id="consent" required />
+              <input 
+                type="checkbox" 
+                id="consent" 
+                required 
+                checked={formData.consent}
+                onChange={handleChange}
+              />
               <label htmlFor="consent">I agree to be contacted by Hogens Technologies Ltd regarding my service request.</label>
             </div>
 
             <div className={styles.footer}>
-              <Button type="submit" variant="primary" size="lg" style={{ width: '100%' }}>
-                Submit Service Request
+              <Button type="submit" variant="primary" size="lg" style={{ width: '100%' }} disabled={isSubmitting}>
+                {isSubmitting ? 'Submitting...' : 'Submit Service Request'}
               </Button>
             </div>
 
