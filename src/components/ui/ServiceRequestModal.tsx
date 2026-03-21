@@ -153,12 +153,11 @@ export default function ServiceRequestModal() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="organization">Organization / Institution Name <span>*</span></label>
+              <label htmlFor="organization">Organization / Institution Name</label>
               <input 
                 type="text" 
                 id="organization" 
                 placeholder="Enter Organization / Institution Name" 
-                required 
                 value={formData.organization}
                 onChange={handleChange}
               />
@@ -182,10 +181,9 @@ export default function ServiceRequestModal() {
             </div>
 
             <div className={styles.formGroup}>
-              <label htmlFor="orgType">Type of Organization <span>*</span></label>
+              <label htmlFor="orgType">Type of Organization</label>
               <select 
                 id="orgType" 
-                required 
                 value={formData.orgType}
                 onChange={handleChange}
               >

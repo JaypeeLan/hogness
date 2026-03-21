@@ -7,7 +7,7 @@ export async function POST(req: NextRequest) {
     const { fullName, email, phone, organization, service, orgType, timeline, description } = body;
 
     // Validate required fields
-    if (!fullName || !email || !phone || !organization || !service || !orgType) {
+    if (!fullName || !email || !phone || !service) {
       return NextResponse.json(
         { message: 'Missing required fields' },
         { status: 400 }
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
     // Email content for the admin
     const mailOptions = {
       from: process.env.SMTP_USER,
-      to: 'laniranjohnpault@gmail.com', // Using the provided test email as the recipient
+      to: 'hogenstechnologiesltd@gmail.com', // Using the provided test email as the recipient
       subject: `New Service Request from ${fullName}`,
       text: `
         New Service Request Details:
