@@ -70,9 +70,9 @@ export default function HomePage() {
       <section className={styles.trust}>
         <div className="container">
           <div className={`${styles.trustHeader} anim`}>
-            <h2 className={styles.trustTitle}>A Trusted Partner for<br/>Learning &amp; Technology</h2>
+            <h2 className={styles.trustTitle}>A Trusted Partner for <br/> Learning &amp; Technology</h2>
             <p className={styles.trustDesc}>
-              Hogens Technologies Ltd is a growing technology company focused on helping individuals and<br/>organizations understand and use technology more effectively.
+              Hogens Technologies Ltd is a growing technology company focused on helping individuals and <br/> organizations understand and use technology more effectively.
             </p>
           </div>
           <div className={styles.trustGrid}>
@@ -123,7 +123,7 @@ We provide technology training, educational consulting, instructional design, an
           <div className={`${styles.sectionHeader} anim`}>
             <span className={styles.servicesTag}>OUR SERVICES</span>
             <h2 className={styles.sectionTitle}>
-              Technology Solutions That Support<br />Learning and Growth
+              Technology Solutions That Support <br /> Learning and Growth
             </h2>
             <p className={styles.sectionDesc}>
               We offer a range of services designed to help individuals, institutions, and organizations thrive in the digital age.

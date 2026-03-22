@@ -27,12 +27,12 @@ export default function AboutPage() {
                 About Hogens Technologies Ltd
               </div>
               <h1 className={styles.heroH1}>
-                Empowering individuals and<br />
-                organizations with practical<br />
+                Empowering individuals and <br />
+                organizations with practical <br />
                 technology skills
               </h1>
               <p className={styles.heroText}>
-                Hogens Technologies Ltd is a technology company dedicated to making learning and technology simple, practical, and accessible. Through hands-on training programs, digital education solutions, and technology consulting, we help people understand and use technology with confidence.<br/>
+                Hogens Technologies Ltd is a technology company dedicated to making learning and technology simple, practical, and accessible. Through hands-on training programs, digital education solutions, and technology consulting, we help people understand and use technology with confidence. <br/>
                 Whether you want to build digital skills, explore data, or understand emerging technologies, our goal is to support your journey toward knowledge and innovation.
               </p>
             </div>

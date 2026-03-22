@@ -47,7 +47,7 @@ export const COURSES: Course[] = [
   },
   {
     slug: 'data-analysis',
-    title: 'Learn Data Analysis and Turn Raw Data into Meaningful Insights',
+    title: 'Data Analysis',
     tagline: 'Understand how organizations use data to make smarter decisions and solve real problems.',
     icon: '/images/icons/da.svg',
     pageTitle: 'Learn Data Analysis and Turn Raw Data into Meaningful Insights',
