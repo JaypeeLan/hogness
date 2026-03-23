@@ -60,6 +60,21 @@ export async function POST(req: NextRequest) {
     // Send email
     await transporter.sendMail(mailOptions);
 
+    // [Optional] Send to Google Sheets if configured
+    if (process.env.GOOGLE_SHEET_URL) {
+      try {
+        await fetch(process.env.GOOGLE_SHEET_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        console.log('Successfully posted to Google Sheet');
+      } catch (err) {
+        console.error('Failed to post to Google Sheet:', err);
+        // We don't fail the entire request if Google Sheet posting fails
+      }
+    }
+
     return NextResponse.json(
       { message: 'Service request sent successfully!' },
       { status: 200 }
