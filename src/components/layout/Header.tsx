@@ -106,7 +106,7 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className={styles.cta}>
-            <Button onClick={openModal} variant="primary" size="md" style={{ height: '44px', padding: '0 24px', fontSize: '13px', borderRadius: '8px' }}>
+            <Button onClick={() => openModal()} variant="primary" size="md" style={{ height: '44px', padding: '0 24px', fontSize: '13px', borderRadius: '8px' }}>
               Get Started
             </Button>
           </div>
