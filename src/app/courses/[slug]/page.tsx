@@ -176,7 +176,7 @@ export default async function CoursePage({ params }: Props) {
       <CTABanner 
          title="Start Your Learning Journey Today"
          description="Technology skills are becoming essential in almost every field. Whether you are a beginner or looking to develop new career skills, our programs can help you take the next step."
-         ctaLabel="Register Now"
+         ctaLabel="Get Started"
       />
     </main>
   );

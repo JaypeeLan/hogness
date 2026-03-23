@@ -6,22 +6,23 @@ import { useServiceModal } from '@/contexts/ServiceModalContext';
 
 interface EnrollButtonProps {
   className?: string;
-  variant?: "primary" | "white" | "outline";
+  variant?: "primary" | "white" | "outline" | "white-outline";
   size?: "sm" | "md" | "lg";
   style?: React.CSSProperties;
+  service?: string;
   children: React.ReactNode;
 }
 
-export default function EnrollButton({ className, variant = "primary", size = "lg", style, children }: EnrollButtonProps) {
+export default function EnrollButton({ className, variant = "primary", size = "lg", style, service, children }: EnrollButtonProps) {
   const { openModal } = useServiceModal();
 
   return (
     <Button 
-      variant={variant} 
+      variant={variant as any} 
       size={size} 
       className={className} 
       style={style}
-      onClick={openModal}
+      onClick={() => openModal(service)}
     >
       {children}
     </Button>

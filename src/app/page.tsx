@@ -5,6 +5,7 @@ import CTABanner from '@/components/sections/CTABanner';
 import { COURSES, SERVICES, FAQS, LEARNING_STEPS } from '@/lib/data';
 import styles from './page.module.scss';
 import Image from 'next/image';
+import EnrollButton from '@/components/ui/EnrollButton';
 import { 
   NodeIcon, 
   ToolsIcon, 
@@ -52,9 +53,9 @@ export default function HomePage() {
                 <Button as="link" href="/courses" variant="primary" size="lg">
                   Explore Courses &rarr;
                 </Button>
-                <Button as="link" href="/courses" variant="white" size="lg" style={{ color: '#000', fontWeight: 'bold' }}>
+                <EnrollButton variant="white" size="lg" style={{ color: '#000', fontWeight: 'bold' }}>
                   Start Learning Today
-                </Button>
+                </EnrollButton>
               </div>
             </div>
           </div>
@@ -267,17 +268,17 @@ We provide technology training, educational consulting, instructional design, an
           </div>
           <div className={styles.contactCards}>
             {[
-              { bg: '#2563EB', imgSrc: '/images/contact/call.png',  label: 'Call Us',   value: '+234 806 897 4616', sub: 'Speak directly with our team for more information about our programs.' },
-              { bg: '#8B5CF6', imgSrc: '/images/contact/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
-              { bg: '#111827', imgSrc: '/images/contact/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
-            ].map(({ bg, imgSrc, label, value, sub }, i) => (
+              { href: 'tel:+2348068974616', imgSrc: '/images/contact/call.png',  label: 'Call Us',   value: '+234 806 897 4616', sub: 'Speak directly with our team for more information about our programs.' },
+              { href: 'mailto:hogenstechnologiesltd@gmail.com', imgSrc: '/images/contact/email.png', label: 'Email Us',  value: 'hogenstechnologiesltd@gmail.com', sub: 'Send us an email and a member of our team will respond to your inquiry.' },
+              { href: 'https://wa.me/2348068974616', imgSrc: '/images/contact/chat.png',  label: 'Chat With Us', value: 'Chat on Whatsapp', sub: 'Contact us through whatsApp for quick responses to your questions' },
+            ].map(({ href, imgSrc, label, value, sub }, i) => (
               <div key={label} className={`${styles.contactCard} anim`} data-delay={String(i + 1)}>
                 <span className={styles.contactImageWrap}>
                   <Image src={imgSrc} alt={label} width={80} height={80} className={styles.contactImage} />
                 </span>
                 <h3 className={styles.contactLabel}>{label}</h3>
                 <p className={styles.contactSub}>{sub}</p>
-                <p className={styles.contactValue} style={{ color: bg }}>{value}</p>
+                <a href={href} className={styles.contactValue} style={{ color: '#6600C9' }}>{value}</a>
               </div>
             ))}
           </div>

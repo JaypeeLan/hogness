@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CTABanner from '@/components/sections/CTABanner';
 import styles from './page.module.scss';
+import EnrollButton from '@/components/ui/EnrollButton';
 import { 
   NodeIcon, 
   BulletIcon, 
@@ -73,9 +74,9 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Create interactive learning environments</li>
                 <li><BulletIcon className={styles.bulletIcon} /> Align content to organisational goals</li>
               </ul>
-              <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
+              <EnrollButton service="Instructional Design" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
-              </Button>
+              </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
               <Image src="/images/sections/instructional-design.png" alt="Instructional Design" width={600} height={400} className={styles.serviceImg} />
@@ -101,9 +102,9 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Data strategy consulting</li>
                 <li><BulletIcon className={styles.bulletIcon} /> Training in data tools</li>
               </ul>
-              <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
+              <EnrollButton service="Data Analysis Solutions" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
-              </Button>
+              </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
               <Image src="/images/sections/data-analysis-solutions.png" alt="Data Analysis Solutions" width={600} height={400} className={styles.serviceImg} />
@@ -138,9 +139,9 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Strengthen your digital literacy</li>
                 <li><BulletIcon className={styles.bulletIcon} /> Master data science and analytics</li>
               </ul>
-              <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
+              <EnrollButton service="Tech Skills Training" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Now
-              </Button>
+              </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
               <Image src="/images/sections/tech-skills-training.png" alt="Tech Skills Training" width={600} height={400} className={styles.serviceImg} />
@@ -165,9 +166,9 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Teacher professional development</li>
                 <li><BulletIcon className={styles.bulletIcon} /> Educational research and data analysis</li>
               </ul>
-              <Button as="link" href="/about" variant="primary" size="md" className={styles.serviceBtn}>
+              <EnrollButton service="Educational Consultancy" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
-              </Button>
+              </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
               <Image src="/images/sections/educational-consultancy.png" alt="Educational Consultancy" width={600} height={400} className={styles.serviceImg} />
@@ -192,9 +193,9 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Open educational resources</li>
                 <li><BulletIcon className={styles.bulletIcon} /> Educational software development</li>
               </ul>
-              <Button as="link" href="/courses" variant="primary" size="md" className={styles.serviceBtn}>
+              <EnrollButton service="Educational Resources & Gadgets" variant="primary" size="md" className={styles.serviceBtn}>
                 Enrol Today
-              </Button>
+              </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
               <Image src="/images/sections/educational-resources.png" alt="Educational Resources" width={600} height={400} className={styles.serviceImg} />

@@ -16,14 +16,14 @@
   background: #150033;
   padding-top: 100px;
   padding-bottom: 60px;
-  margin-inline: 200px;
-  border-radius: 60px;
+  margin-inline: 100px;
+  border-radius: 30px;
   overflow: hidden;
 
-  @include below(xl) { margin-inline: 40px; }
+  @include below(xl) { margin-inline: 20px; }
   @include below(md) {
     margin-inline: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     padding-top: 80px;
     padding-bottom: 32px;
   }
@@ -57,6 +57,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 100%;
   
   @include below(lg) { align-items: center; }
 }
@@ -64,22 +65,22 @@
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 11px;
   font-weight: 700;
   color: $white;
   background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid #E5E5EA;
   border-radius: $r-full;
-  padding: 4px 12px;
+  padding: 20px 40px;
   letter-spacing: 0.05em;
   width: fit-content;
 }
 
 .heroTitle {
-  font-size: 48px;
+  font-size: 72px;
   font-weight: 800;
-  color: $white;
+  color: #C7C7CC;
   line-height: $lh-tight;
 
   @include below(md) { font-size: 32px; }
@@ -97,8 +98,8 @@
 }
 
 .heroDesc {
-  font-size: 15px;
-  color: rgba(255,255,255,0.7);
+  font-size: 18px;
+  color: #E5E7EC;
   line-height: 1.7;
   max-width: 560px;
 
@@ -108,7 +109,8 @@
 .heroBtnGroup {
   display: flex;
   gap: 16px;
-  margin-top: 12px;
+  margin-top: auto;
+  padding-top: 12px;
 
   @include below(sm) {
     flex-direction: column;

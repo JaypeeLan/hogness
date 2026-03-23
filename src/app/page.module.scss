@@ -50,14 +50,14 @@
 .heroBadge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   font-size: 10px;
   font-weight: $fw-600;
   color: $white;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid #E5E5EA;
   border-radius: $r-full;
-  padding: 6px 16px;
+  padding: 20px 40px;
   letter-spacing: 0.05em;
 }
 
@@ -855,4 +855,10 @@
 .contactValue {
   font-size: $fs-12;
   font-weight: $fw-700;
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

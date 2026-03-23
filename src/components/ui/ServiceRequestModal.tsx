@@ -6,7 +6,7 @@ import styles from './ServiceRequestModal.module.scss';
 import Button from './Button';
 
 export default function ServiceRequestModal() {
-  const { isOpen, closeModal } = useServiceModal();
+  const { isOpen, selectedService, closeModal } = useServiceModal();
   const [isClosing, setIsClosing] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
@@ -20,18 +20,26 @@ export default function ServiceRequestModal() {
     description: '',
     consent: false,
   });
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string | null }>({
+    type: null,
+    message: null,
+  });
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
       setIsClosing(false);
+      // Pre-fill service if provided
+      if (selectedService) {
+        setFormData(prev => ({ ...prev, service: selectedService }));
+      }
     } else {
       document.body.style.overflow = '';
     }
     return () => {
       document.body.style.overflow = '';
     };
-  }, [isOpen]);
+  }, [isOpen, selectedService]);
 
   if (!isOpen && !isClosing) return null;
 
@@ -79,15 +87,15 @@ export default function ServiceRequestModal() {
       });
 
       if (response.ok) {
-        alert('Service Request Submitted Successfully!');
-        handleClose();
+        setSubmitStatus({ type: 'success', message: 'Service Request Submitted Successfully!' });
+        setTimeout(() => handleClose(), 2000);
       } else {
         const result = await response.json();
-        alert(`Failed to submit request: ${result.message || 'Unknown error'}`);
+        setSubmitStatus({ type: 'error', message: `Failed: ${result.message || 'Unknown error'}` });
       }
     } catch (error) {
       console.error('Submission error:', error);
-      alert('An error occurred while submitting the request. Please try again later.');
+      setSubmitStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
     } finally {
       setIsSubmitting(false);
     }
@@ -234,6 +242,11 @@ export default function ServiceRequestModal() {
             </div>
 
             <div className={styles.footer}>
+              {submitStatus.message && (
+                <div className={`${styles.statusMessage} ${styles[submitStatus.type!]}`}>
+                  {submitStatus.message}
+                </div>
+              )}
               <Button type="submit" variant="primary" size="lg" style={{ width: '100%' }} disabled={isSubmitting}>
                 {isSubmitting ? 'Submitting...' : 'Submit Service Request'}
               </Button>

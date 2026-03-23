@@ -4,7 +4,8 @@ import React, { createContext, useContext, useState } from 'react';
 
 interface ServiceModalContextProps {
   isOpen: boolean;
-  openModal: () => void;
+  selectedService: string;
+  openModal: (service?: string) => void;
   closeModal: () => void;
 }
 
@@ -12,12 +13,20 @@ const ServiceModalContext = createContext<ServiceModalContextProps | undefined>(
 
 export function ServiceModalProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedService, setSelectedService] = useState('');
 
-  const openModal = () => setIsOpen(true);
-  const closeModal = () => setIsOpen(false);
+  const openModal = (service?: string) => {
+    if (service) setSelectedService(service);
+    setIsOpen(true);
+  };
+  
+  const closeModal = () => {
+    setIsOpen(false);
+    setTimeout(() => setSelectedService(''), 300); // Clear after animation
+  };
 
   return (
-    <ServiceModalContext.Provider value={{ isOpen, openModal, closeModal }}>
+    <ServiceModalContext.Provider value={{ isOpen, selectedService, openModal, closeModal }}>
       {children}
     </ServiceModalContext.Provider>
   );

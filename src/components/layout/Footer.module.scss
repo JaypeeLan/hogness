@@ -150,11 +150,16 @@
 .helpBtn {
   margin-top: 12px;
   align-self: flex-start;
-  border-radius: 9999px !important;
+  width: 201px !important;
+  height: 60px !important;
+  border-radius: 100px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   background-color: #6C2BD9 !important;
   color: #fff !important;
-  padding: 10px 28px !important;
-  font-size: $fs-13 !important;
+  padding: 0 !important;
+  font-size: $fs-14 !important;
   font-weight: $fw-600 !important;
   border: none !important;
 

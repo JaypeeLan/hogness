@@ -1,17 +1,66 @@
 
-import type { Metadata } from 'next';
+'use client';
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import CTABanner from '@/components/sections/CTABanner';
 import styles from './page.module.scss';
 import { NodeIcon } from '@/components/ui/Icons';
 
-export const metadata: Metadata = {
-  title: 'About | Hogens Technologies Ltd',
-  description: 'Empowering individuals and organizations with practical technology skills.',
-};
-
 export default function AboutPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    service: 'General Inquiry',
+    description: '',
+  });
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error' | null; message: string | null }>({
+    type: null,
+    message: null,
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({ ...prev, [id]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({
+          fullName: '',
+          email: '',
+          phone: '',
+          service: 'General Inquiry',
+          description: '',
+        });
+      } else {
+        const result = await response.json();
+        setSubmitStatus({ type: 'error', message: `Error: ${result.message || 'Failed to send message'}` });
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setSubmitStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <main className={styles.main}>
       {/* ══ HERO =============================================== */}
@@ -29,7 +78,7 @@ export default function AboutPage() {
               <h1 className={styles.heroH1}>
                 Empowering individuals and <br />
                 organizations with practical <br />
-                technology skills
+                technology skills and digital solutions
               </h1>
               <p className={styles.heroText}>
                 Hogens Technologies Ltd is a technology company dedicated to making learning and technology simple, practical, and accessible. Through hands-on training programs, digital education solutions, and technology consulting, we help people understand and use technology with confidence. <br/>
@@ -124,32 +173,65 @@ We believe that when people understand technology, they can use it to create opp
               </p>
             </div>
             {/* Right: Form */}
-            <div className={`${styles.contactFormCol} anim`} data-delay="2">
+            <div id="contact" className={`${styles.contactFormCol} anim`} data-delay="2">
               <h3 className={styles.contactFormTitle}>Send Us a Message</h3>
               <p className={styles.contactFormSubtitle}>
                 Fill in your contact details below to ensure we are able to get back to you.
               </p>
-              <form className={styles.contactForm}>
+              <form className={styles.contactForm} onSubmit={handleSubmit}>
                 <div className={styles.formRow}>
                   <div className={styles.formGroup}>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" placeholder="E.g John Doe" required />
+                    <label htmlFor="fullName">Name</label>
+                    <input 
+                      type="text" 
+                      id="fullName" 
+                      placeholder="E.g John Doe" 
+                      required 
+                      value={formData.fullName}
+                      onChange={handleChange}
+                    />
                   </div>
                   <div className={styles.formGroup}>
                     <label htmlFor="email">Email</label>
-                    <input type="email" id="email" placeholder="john.doe@example.com" required />
+                    <input 
+                      type="email" 
+                      id="email" 
+                      placeholder="john.doe@example.com" 
+                      required 
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
                   </div>
                 </div>
                 <div className={styles.formGroup}>
                   <label htmlFor="phone">Phone</label>
-                  <input type="tel" id="phone" placeholder="+234 000 000 0000" />
+                  <input 
+                    type="tel" 
+                    id="phone" 
+                    placeholder="+234 000 000 0000" 
+                    required
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
                 </div>
                 <div className={styles.formGroup}>
-                  <label htmlFor="message">Message</label>
-                  <textarea id="message" rows={4} placeholder="How can we help you?" required></textarea>
+                  <label htmlFor="description">Message</label>
+                  <textarea 
+                    id="description" 
+                    rows={4} 
+                    placeholder="How can we help you?" 
+                    required
+                    value={formData.description}
+                    onChange={handleChange}
+                  ></textarea>
                 </div>
-                <Button as="button" type="submit" variant="primary" size="md" className={styles.submitBtn}>
-                  Send Message
+                {submitStatus.message && (
+                  <div className={`${styles.statusMessage} ${styles[submitStatus.type!]}`}>
+                    {submitStatus.message}
+                  </div>
+                )}
+                <Button as="button" type="submit" variant="primary" size="md" className={styles.submitBtn} disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
