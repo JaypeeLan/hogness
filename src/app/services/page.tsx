@@ -75,7 +75,7 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Align content to organisational goals</li>
               </ul>
               <EnrollButton service="Instructional Design" variant="primary" size="md" className={styles.serviceBtn}>
-                Enrol Today
+                Get Started
               </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
@@ -103,7 +103,7 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Training in data tools</li>
               </ul>
               <EnrollButton service="Data Analysis Solutions" variant="primary" size="md" className={styles.serviceBtn}>
-                Enrol Today
+                Get Started
               </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
@@ -167,7 +167,7 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Educational research and data analysis</li>
               </ul>
               <EnrollButton service="Educational Consultancy" variant="primary" size="md" className={styles.serviceBtn}>
-                Enrol Today
+                Get Started
               </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>
@@ -194,7 +194,7 @@ export default function ServicesPage() {
                 <li><BulletIcon className={styles.bulletIcon} /> Educational software development</li>
               </ul>
               <EnrollButton service="Educational Resources & Gadgets" variant="primary" size="md" className={styles.serviceBtn}>
-                Enrol Today
+                Get Started
               </EnrollButton>
             </div>
             <div className={styles.serviceImgWrap}>

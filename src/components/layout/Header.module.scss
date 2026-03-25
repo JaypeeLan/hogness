@@ -265,6 +265,27 @@
   }
 }
 
+.drawerDropdown {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.drawerDropdownHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drawerDropdownTrigger {
+  padding: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -12px;
+}
+
 .drawerLinkActive {
   color: $white;
 }

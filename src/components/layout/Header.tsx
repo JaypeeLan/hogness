@@ -132,22 +132,41 @@ export default function Header() {
           {NAV.map(({ href, label, isDropdown, type, items }, i) => (
             isDropdown ? (
                <div key={`mobile-${type}`} className={styles.drawerDropdown}>
-                 <button 
-                  className={styles.drawerLink} 
-                  onClick={() => setActiveMobileDropdown(activeMobileDropdown === type ? null : (type || null))}
-                  style={{ width: '100%', textAlign: 'left', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
-                 >
-                   {label}
-                   <ChevronDownIcon 
-                    size={20} 
-                    strokeWidth={2.5} 
-                    style={{ 
-                      transform: activeMobileDropdown === type ? 'rotate(180deg)' : 'rotate(0deg)', 
-                      transition: 'transform 0.3s ease',
-                      opacity: 0.5
-                    }}
-                   />
-                 </button>
+                 <div className={styles.drawerDropdownHeader}>
+                    {href !== '#' ? (
+                      <Link
+                        href={href}
+                        className={styles.drawerLink}
+                        onClick={() => setMenuOpen(false)}
+                        style={{ borderBottom: 'none', flex: 1, paddingRight: 0, animationDelay: menuOpen ? `${i * 60 + 80}ms` : '0ms' }}
+                      >
+                        {label}
+                      </Link>
+                    ) : (
+                      <button 
+                        className={styles.drawerLink} 
+                        onClick={() => setActiveMobileDropdown(activeMobileDropdown === type ? null : (type || null))}
+                        style={{ borderBottom: 'none', flex: 1, textAlign: 'left', background: 'none', border: 'none', paddingRight: 0, animationDelay: menuOpen ? `${i * 60 + 80}ms` : '0ms' }}
+                      >
+                        {label}
+                      </button>
+                    )}
+                    <button 
+                      className={styles.drawerDropdownTrigger}
+                      onClick={() => setActiveMobileDropdown(activeMobileDropdown === type ? null : (type || null))}
+                      aria-label={`Toggle ${label} dropdown`}
+                    >
+                      <ChevronDownIcon 
+                        size={20} 
+                        strokeWidth={2.5} 
+                        style={{ 
+                          transform: activeMobileDropdown === type ? 'rotate(180deg)' : 'rotate(0deg)', 
+                          transition: 'transform 0.3s ease',
+                          opacity: 0.5
+                        }}
+                      />
+                    </button>
+                 </div>
                  <div className={[styles.drawerSubNav, activeMobileDropdown === type ? styles.drawerSubNavOpen : ''].filter(Boolean).join(' ')}>
                     {items?.map((item: any) => (
                       <Link

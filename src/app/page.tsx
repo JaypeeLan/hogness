@@ -239,7 +239,7 @@ We provide technology training, educational consulting, instructional design, an
       <section className={styles.faq}>
         <div className="container">
           <div className={`${styles.sectionHeader} anim`} style={{ marginBottom: '32px' }}>
-            <h2 className={styles.sectionTitle}>Freequently asked questions</h2>
+            <h2 className={styles.sectionTitle}>Frequently asked questions</h2>
             <p className={styles.sectionDesc}>We're happy to answer your questions</p>
           </div>
           <div className={styles.faqList}>
