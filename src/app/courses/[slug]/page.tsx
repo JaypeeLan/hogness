@@ -21,6 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${course.title} | Hogens Technologies Ltd`,
     description: course.description,
+    openGraph: {
+      title: `${course.title} | Hogens Technologies Ltd`,
+      description: course.description,
+      url: `https://hogness.vercel.app/courses/${slug}`,
+      images: [{ url: `/images/courses/${course.slug}-page-img.png`, width: 1200, height: 630, alt: course.title }],
+      type: 'website',
+    }
   };
 }
 
@@ -81,14 +88,18 @@ export default async function CoursePage({ params }: Props) {
               <h2 className={styles.sectionTitle}>Course Overview</h2>
               <p className={styles.overviewText}>{course.overview}</p>
               <div className={styles.courseMeta}>
-                <div className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Duration:</span>
-                  <span className={styles.metaValue}>{course.duration}</span>
-                </div>
-                <div className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Fee:</span>
-                  <span className={styles.metaValue}>{course.price}</span>
-                </div>
+                {course.duration && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Duration:</span>
+                    <span className={styles.metaValue}>{course.duration}</span>
+                  </div>
+                )}
+                {course.price && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Fee:</span>
+                    <span className={styles.metaValue}>{course.price}</span>
+                  </div>
+                )}
                 {course.ageRange && (
                   <div className={styles.metaItem}>
                     <span className={styles.metaLabel}>Age Range:</span>

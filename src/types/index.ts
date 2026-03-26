@@ -7,9 +7,9 @@ export interface Course {
   icon: string;
   description: string;
   overview: string;
-  duration: string;
+  duration?: string;
   level: string;
-  price: string;
+  price?: string;
   ageRange?: string;
   modules: Module[];
   outcomes: string[];

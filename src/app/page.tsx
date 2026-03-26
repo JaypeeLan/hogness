@@ -28,7 +28,15 @@ import {
 } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: 'Build Future-Ready Tech Skills That Open New Opportunities',
+  title: 'Build Future-Ready Tech Skills That Open New Opportunities | Hogens Technologies Ltd',
+  description: 'At Hogens Technologies Ltd, we make technology simple, practical, and accessible. Explore our data analysis, AI, Python, and digital literacy training programs.',
+  openGraph: {
+    title: 'Practical Tech Skills Training | Hogens Technologies Ltd',
+    description: 'Explore our data analysis, AI, Python, and digital literacy training programs.',
+    url: 'https://hogness.vercel.app',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Hogens Technologies Ltd' }],
+    type: 'website',
+  }
 };
 
 export default function HomePage() {

@@ -6,9 +6,15 @@ import styles from './page.module.scss';
 import { NodeIcon } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: 'Courses',
-  description:
-    'Explore all courses — Data Analysis, Data Science, Python, Digital Literacy, Coding for Kids, and AI/Machine Intelligence.',
+  title: 'All Courses | Hogens Technologies Ltd',
+  description: 'Explore all courses — Data Analysis, Data Science, Python, Digital Literacy, Coding for Kids, and AI/Machine Intelligence.',
+  openGraph: {
+    title: 'All Courses | Hogens Technologies Ltd',
+    description: 'Explore all courses — Data Analysis, Data Science, Python, Digital Literacy, Coding for Kids, and AI/Machine Intelligence.',
+    url: 'https://hogness.vercel.app/courses',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Hogens Technologies Ltd' }],
+    type: 'website',
+  }
 };
 
 export default function CoursesPage() {
@@ -55,8 +61,8 @@ export default function CoursesPage() {
                   <p className={styles.cardDesc}>{course.description}</p>
                 </div>
                 <div className={styles.cardMeta}>
-                  <span className={styles.cardDuration}>⏱ {course.duration}</span>
-                  <span className={styles.cardLevel}>{course.price}</span>
+                  {course.duration && <span className={styles.cardDuration}>⏱ {course.duration}</span>}
+                  {course.price && <span className={styles.cardLevel}>{course.price}</span>}
                 </div>
                 <span className={styles.cardCta}>Explore course →</span>
               </Link>

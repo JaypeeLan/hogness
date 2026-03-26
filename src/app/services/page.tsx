@@ -16,7 +16,14 @@ import {
 
 export const metadata: Metadata = {
   title: 'Services | Hogens Technologies Ltd',
-  description: 'Technology solutions for learning and innovation.',
+  description: 'Technology solutions for learning and innovation including Instructional Design, Data Analysis Solutions, Tech Skills Training, and Educational Consultancy.',
+  openGraph: {
+    title: 'Services | Hogens Technologies Ltd',
+    description: 'Technology solutions for learning and innovation including Instructional Design, Data Analysis Solutions, Tech Skills Training, and Educational Consultancy.',
+    url: 'https://hogness.vercel.app/services',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Hogens Technologies Ltd' }],
+    type: 'website',
+  }
 };
 
 export default function ServicesPage() {

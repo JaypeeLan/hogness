@@ -125,9 +125,7 @@ export const COURSES: Course[] = [
     description: 'Introduce young learners to programming through fun activities, games, and creative coding projects.',
    subDescription:'Fun, interactive programming lessons designed to help children learn creativity, problem-solving, and technology skills.',
     overview: 'Coding for Kids introduces children to computational thinking and programming through games, animations, and creative projects. We use visual tools to make coding fun and easy to understand, instead of focusing only on technical concepts.',
-    duration: 'No duration',
     level: 'Beginner',
-    price: 'Free',
     ageRange: '8 – 14 years',
     modules: [
       { title: 'Introduction to Coding & Computational Thinking', summary: 'Children begin understanding what programming is and how computers follow instructions.', topics: ['What coding means', 'Basic problem-solving strategies', 'Understanding sequences and structure', 'Think like a programmer'] },
