@@ -28,8 +28,8 @@ import {
 } from '@/components/ui/Icons';
 
 export const metadata: Metadata = {
-  title: 'Build Future-Ready Tech Skills That Open New Opportunities | Hogens Technologies Ltd',
-  description: 'At Hogens Technologies Ltd, we make technology simple, practical, and accessible. Explore our data analysis, AI, Python, and digital literacy training programs.',
+  title: 'Helping People and Organizations Learn, Grow, and Innovate | Hogens Technologies Ltd',
+  description: 'From tech skills training to data insights and educational solutions, Hogens Technologies Ltd makes technology easier to understand, apply, and use for meaningful progress.',
   openGraph: {
     title: 'Practical Tech Skills Training | Hogens Technologies Ltd',
     description: 'Explore our data analysis, AI, Python, and digital literacy training programs.',
@@ -52,10 +52,10 @@ export default function HomePage() {
                 PRACTICAL TECH TRAINING
               </span>
               <h1 className={styles.heroH1}>
-                <span> Build Future-Ready Tech Skills That </span> Open New Opportunities
+                Helping People and Organizations <br /> Learn, Grow, and Innovate
               </h1>
               <p className={styles.heroDesc}>
-                At Hogens Technologies Ltd, we make technology simple, practical, and accessible. Whether you want to explore data, understand AI, or start coding, our hands-on programs help you learn with confidence.
+                From tech skills training to data insights and educational solutions, Hogens Technologies Ltd makes technology easier to understand, apply, and use for meaningful progress.
               </p>
               <div className={styles.heroActions}>
                 <Button as="link" href="/courses" variant="primary" size="lg">
