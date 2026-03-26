@@ -10,8 +10,9 @@ export const COURSES: Course[] = [
     description: 'Understand how AI systems work, how machines learn, and how intelligent technologies are used in everyday life.',
     subDescription:'Learn how machines learn from data and how AI systems power modern technologies.',
     overview: 'A comprehensive introduction to AI and machine learning — covering the theory, tools, and real-world applications that are transforming every industry from healthcare to finance.',
-    duration: '10 weeks',
+    duration: '3 months',
     level: 'Intermediate',
+    price: '₦450,000',
     modules: [
       { title: 'Foundations of AI', summary: 'What AI is, its history, and its societal impact.', topics: ['Narrow vs general AI', 'History of AI', 'Ethics & bias', 'AI landscape'] },
       { title: 'Machine Learning Basics', summary: 'How machines learn from data.', topics: ['Supervised vs unsupervised', 'Training & testing', 'Feature engineering', 'Model selection'] },
@@ -32,8 +33,9 @@ export const COURSES: Course[] = [
     description: 'Explore how data is used to build predictive models and support decision-making using modern techniques.',
     subDescription: 'Discover how data scientists transform raw data into predictive insights.',
     overview: 'An advanced programme covering statistical modelling, machine learning algorithms, and real-world applications of data science across industries including finance, healthcare, and technology.',
-    duration: '12 weeks',
+    duration: '4 months',
     level: 'Intermediate – Advanced',
+    price: '₦380,000',
     modules: [
       { title: 'Python for Data Science', summary: 'Core Python skills for data work.', topics: ['NumPy & pandas', 'Data wrangling', 'Jupyter notebooks', 'Data pipelines'] },
       { title: 'Statistical Foundations', summary: 'Probability and statistics for machine learning.', topics: ['Probability theory', 'Hypothesis testing', 'Regression basics', 'Bayesian thinking'] },
@@ -54,8 +56,9 @@ export const COURSES: Course[] = [
     description: 'Learn how to collect, organize, and interpret data using tools like Excel, SQL, Power BI, and Python.',
    subDescription:'Learn how to confidently use computers, internet tools, and modern digital technologies for school, work, and personal productivity.',
     overview: 'This course teaches you how to collect, clean, analyse, and visualise data using industry-standard tools. You will learn to extract meaningful insights from complex datasets and communicate them effectively to stakeholders.',
-    duration: '8 weeks',
+    duration: '4 months',
     level: 'Beginner – Intermediate',
+    price: '₦250,000',
     modules: [
       { title: 'Introduction to Data Analysis', summary: 'Understand what data analysis is and why it matters in every industry.', topics: ['What is data analysis?', 'Types of data', 'The data analysis workflow', 'Tools overview'] },
       { title: 'Data Collection & Cleaning', summary: 'Learn to gather and prepare data for analysis.', topics: ['Data sources', 'Handling missing values', 'Data transformation', 'Data validation'] },
@@ -77,8 +80,9 @@ export const COURSES: Course[] = [
     description: 'Build essential computer and internet skills that are important for school, work, and everyday digital life.',
    subDescription:'Learn how to confidently use computers, internet tools, and modern digital technologies for school, work, and personal productivity.',
     overview: 'A practical introduction to using digital tools, staying safe online, and leveraging technology for productivity — designed for beginners and non-tech professionals at every level.',
-    duration: '4 weeks',
+    duration: '6 weeks',
     level: 'Beginner',
+    price: '₦100,000',
     modules: [
       { title: 'Computing Fundamentals', summary: 'Understand hardware, software, and operating systems.', topics: ['Using a computer', 'File management', 'Internet basics', 'Cloud storage'] },
       { title: 'Productivity Tools', summary: 'Get things done with popular office applications.', topics: ['Word processing', 'Spreadsheets', 'Presentations', 'Email & calendar'] },
@@ -100,6 +104,7 @@ export const COURSES: Course[] = [
     overview: 'Python is the most popular language for data science, automation, web development, and AI. This course takes you from zero to writing real programmes with clean, professional code.',
     duration: '8 weeks',
     level: 'Beginner – Intermediate',
+    price: '₦120,000',
     modules: [
       { title: 'Python Fundamentals', summary: 'Variables, data types, and control flow.', topics: ['Variables & data types', 'Conditionals & loops', 'Functions', 'Error handling'] },
       { title: 'Data Structures', summary: 'Working with lists, dicts, and more.', topics: ['Lists, tuples, sets', 'Dictionaries', 'List comprehensions', 'Nested structures'] },
@@ -120,8 +125,9 @@ export const COURSES: Course[] = [
     description: 'Introduce young learners to programming through fun activities, games, and creative coding projects.',
    subDescription:'Fun, interactive programming lessons designed to help children learn creativity, problem-solving, and technology skills.',
     overview: 'Coding for Kids introduces children to computational thinking and programming through games, animations, and creative projects. We use visual tools to make coding fun and easy to understand, instead of focusing only on technical concepts.',
-    duration: '6 weeks',
+    duration: 'No duration',
     level: 'Beginner',
+    price: 'Free',
     ageRange: '8 – 14 years',
     modules: [
       { title: 'Introduction to Coding & Computational Thinking', summary: 'Children begin understanding what programming is and how computers follow instructions.', topics: ['What coding means', 'Basic problem-solving strategies', 'Understanding sequences and structure', 'Think like a programmer'] },

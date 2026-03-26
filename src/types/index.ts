@@ -9,6 +9,7 @@ export interface Course {
   overview: string;
   duration: string;
   level: string;
+  price: string;
   ageRange?: string;
   modules: Module[];
   outcomes: string[];

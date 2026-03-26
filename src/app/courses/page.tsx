@@ -56,7 +56,7 @@ export default function CoursesPage() {
                 </div>
                 <div className={styles.cardMeta}>
                   <span className={styles.cardDuration}>⏱ {course.duration}</span>
-                  <span className={styles.cardLevel}>{course.level}</span>
+                  <span className={styles.cardLevel}>{course.price}</span>
                 </div>
                 <span className={styles.cardCta}>Explore course →</span>
               </Link>

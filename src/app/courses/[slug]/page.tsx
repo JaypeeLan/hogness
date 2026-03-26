@@ -86,8 +86,8 @@ export default async function CoursePage({ params }: Props) {
                   <span className={styles.metaValue}>{course.duration}</span>
                 </div>
                 <div className={styles.metaItem}>
-                  <span className={styles.metaLabel}>Level:</span>
-                  <span className={styles.metaValue}>{course.level}</span>
+                  <span className={styles.metaLabel}>Fee:</span>
+                  <span className={styles.metaValue}>{course.price}</span>
                 </div>
                 {course.ageRange && (
                   <div className={styles.metaItem}>
